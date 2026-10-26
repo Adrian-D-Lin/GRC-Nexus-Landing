@@ -1,0 +1,18 @@
+MAS NOTICE 626 / FINCEN 31 CFR 1010.410 — CROSS-BORDER WIRE TRANSFERS
+REGULATORY AUTHORITY: MONETARY AUTHORITY OF SINGAPORE (MAS)
+SCOPE: PAYMENT SERVICES ACT (PS ACT) — MONEY LAUNDERING & TERRORISM FINANCING PREVENTION
+
+§ 13.4 APPLICABILITY TO ELECTRONIC FUND TRANSFERS & CLEARING:
+A financial institution effecting or processing a cross-border wire transfer, card network clearance, or stored value remittance of SGD 1,000 or more (or equivalent foreign currency) shall:
+(a) Identify and verify the originator and beneficiary identity prior to credit release or clearing execution;
+(b) Screen all transaction counterparties against applicable MAS, UN, and OFAC sanctions lists in real time;
+(c) Retain full transactional audit records for a mandatory statutory period of not less than 5 years.
+
+§ 13.6 ENHANCED DUE DILIGENCE & POLITICALLY EXPOSED PERSONS (PEPs):
+Stored value facility holders, digital wallet providers, and merchant acquirers shall apply enhanced customer due diligence (EDD) where:
+(a) A transacting party is identified as a Politically Exposed Person (PEP) or immediate associate;
+(b) Rapid mass disbursements or wallet cashouts are executed to unverified foreign banking endpoints.
+Automated screening rules must be enforced prior to balance release.
+
+§ 13.9 TRANSACTION MONITORING & VELOCITY CHECKS:
+All licensed entities shall establish automated velocity anomaly monitoring on domestic and cross-border currency disbursements to detect structuring, smurfing, or transactions conducted beneath statutory identification limits.

@@ -1,0 +1,24 @@
+PRIVILEGED & CONFIDENTIAL — LEGAL COUNSEL MEMORANDUM
+REF: LGL-2026-0417-AML
+TO: Head of Regulatory Compliance & Chief Risk Officer, Apex Global Payments Pte Ltd
+FROM: Financial Services Regulatory Practice Group
+SUBJECT: Legal Applicability & Exposure Assessment — MAS Notice 626 & FinCEN 31 CFR Requirements
+
+1. EXECUTIVE SUMMARY & COUNSEL OPINION:
+We have conducted a statutory review of your operational payment settlement rails against the recently issued MAS Notice 626 amendments and FinCEN 31 CFR 1010.410 cross-border directives. Based on our analysis, your transaction flows involving VISA card network settlement (Process P-101) and PayPal merchant wallet disbursements (Process P-102) unequivocally fall within the statutory scope of regulated payment and remittance activities.
+
+2. DETAILED OBLIGATION MAPPING ACROSS OPERATIONAL RAILS:
+
+Rail P-101 (VISA Cross-Border Acquiring & Multi-Currency Settlement):
+- Falling under §13.4, transactions exceeding the SGD 1,000 statutory de minimis trigger mandatory originator/beneficiary verification.
+- Real-time screening against consolidated sanctions lists must be completed prior to clearing. Mitigating Control C-201 and C-202 satisfy this mandate.
+
+Rail P-102 (Merchant Digital Wallet Mass Payouts via PayPal Gateway):
+- HIGH VULNERABILITY EXPOSURE. Digital wallet balances disbursed to offshore beneficiary endpoints constitute stored value facilities under §13.6.
+- CRITICAL GAP DETECTED: The current operational workflow dispatches mass payout batches prior to executing automated PEP screening. While post-clearing KYC (C-204) is in place, statutory compliance requires automated pre-disbursement verification. Immediate remediation required.
+
+Rail P-103 (Domestic Clearing via OCBC FAST / PayNow RTGS):
+- Falls under §13.9 for daily transaction velocity monitoring. Given domestic banking counterparty KYC, simplified onboarding applies, but continuous automated velocity threshold alerts remain mandatory.
+
+Rail P-104 (Internal Corporate Payroll & Statutory CPF Remittance):
+- Evaluated as Low Regulatory Exposure. Excluded from cross-border remittance mandates; routine audit monitoring only.
