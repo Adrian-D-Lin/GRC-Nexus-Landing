@@ -277,6 +277,325 @@
       100% { transform: translateX(-50%); }
     }
 
+    /* Hero Card Tab Bar */
+    .exec-tab-bar {
+      display: flex;
+      background: #F1F5F9;
+      border-bottom: 1px solid var(--border);
+    }
+    .exec-tab-btn {
+      flex: 1;
+      padding: 12px 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--slate-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .exec-tab-btn:hover {
+      color: var(--navy);
+      background: rgba(255, 255, 255, 0.6);
+    }
+    .exec-tab-btn.active {
+      background: #FFFFFF;
+      color: var(--navy);
+      border-bottom-color: var(--blue-ai);
+    }
+    .tab-chip {
+      background: var(--blue-ai-bg);
+      color: var(--blue-ai);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 9px;
+      font-weight: 700;
+      border: 1px solid var(--blue-ai-border);
+    }
+
+    /* Hero Survey Panel Styles */
+    .survey-panel {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 380px;
+      justify-content: space-between;
+    }
+    .survey-step-indicator {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--slate-muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    .survey-step-indicator .step-num {
+      color: var(--blue-ai);
+      font-weight: 700;
+    }
+    .survey-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-top: 4px;
+    }
+    .survey-subtitle {
+      font-size: 13px;
+      color: var(--slate-body);
+      line-height: 1.5;
+    }
+    .survey-pills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .survey-pill {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--slate-body);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+    .survey-pill:hover {
+      border-color: var(--navy);
+      background: #FFFFFF;
+      transform: translateY(-1px);
+    }
+    .survey-pill.selected {
+      background: var(--blue-ai-bg);
+      border-color: var(--blue-ai);
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .survey-pill .check-icon {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      color: transparent;
+      background: #FFFFFF;
+    }
+    .survey-pill.selected .check-icon {
+      background: var(--blue-ai);
+      border-color: var(--blue-ai);
+      color: #FFFFFF;
+    }
+    .survey-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .survey-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .survey-field label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--slate-muted);
+      font-weight: 600;
+    }
+    .survey-field input, .survey-field select {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 9px 12px;
+      font-size: 13px;
+      color: var(--navy);
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      background: #FFFFFF;
+      font-family: inherit;
+    }
+    .survey-field input:focus, .survey-field select:focus {
+      border-color: var(--blue-ai);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+    .survey-btn-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .btn-survey-next {
+      background: var(--navy);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .btn-survey-next:hover {
+      background: var(--navy-hover);
+      transform: translateY(-1px);
+    }
+    .btn-survey-back {
+      background: #FFFFFF;
+      color: var(--slate-body);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-survey-back:hover {
+      background: #F1F5F9;
+    }
+
+    /* Result State Box */
+    .survey-result-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      animation: fadeIn 0.3s ease;
+    }
+    .result-score-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      background: var(--amber-bg);
+      border: 1px solid var(--amber-border);
+      color: var(--amber-text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      width: fit-content;
+    }
+    .result-card-inner {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    }
+    .result-row:last-child {
+      border-bottom: none;
+    }
+    .result-row .k {
+      color: var(--slate-muted);
+    }
+    .result-row .v {
+      font-weight: 700;
+      color: var(--navy);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .result-confirm-banner {
+      background: var(--emerald-bg);
+      border: 1px solid var(--emerald-border);
+      color: var(--emerald-text);
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Dedicated Benchmark Section */
+    .section-survey {
+      background: #FFFFFF;
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .survey-full-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: start;
+      margin-top: 36px;
+    }
+    .survey-container-box {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    }
+    .survey-live-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+      position: sticky;
+      top: 90px;
+    }
+    .risk-meter {
+      margin-top: 16px;
+      padding: 16px;
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .risk-meter-header {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .risk-meter-bar {
+      height: 8px;
+      background: #E2E8F0;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+    .risk-meter-fill {
+      height: 100%;
+      width: 78%;
+      background: linear-gradient(to right, var(--emerald), var(--amber));
+      border-radius: 9999px;
+      transition: width 0.5s ease;
+    }
+
     /* Executive Synthesis Card */
     .exec-card {
       background: #FFFFFF;
@@ -897,11 +1216,13 @@
     /* Responsive */
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
+      .survey-full-grid { grid-template-columns: 1fr; }
       .cards-grid-3 { grid-template-columns: 1fr; }
       .feature-grid { grid-template-columns: 1fr 1fr; }
       .arch-grid { grid-template-columns: 1fr 1fr; }
       .consult-grid { grid-template-columns: 1fr; }
       .sec-cards { grid-template-columns: 1fr; }
+      .survey-pills { grid-template-columns: 1fr; }
       nav { display: none; }
     }
   </style>
@@ -913,12 +1234,13 @@
     <div class="container header-inner">
       <div class="wordmark">GRC NEXUS</div>
       <nav>
+        <a href="#survey-benchmark">Audit Readiness</a>
         <a href="#capabilities">Capabilities</a>
-        <a href="#wedge">The 16-Week Wedge</a>
+        <a href="#deployment">Deployment</a>
         <a href="#architecture">Architecture Map</a>
         <a href="#consultancies">For Consultancies</a>
       </nav>
-      <a href="#wedge" class="btn-navy-sm">Launch Live AML Parser ⚡</a>
+      <a href="#survey-benchmark" class="btn-navy-sm">Free Audit Diagnostic ⚡</a>
     </div>
   </header>
 
@@ -933,8 +1255,12 @@
           deterministic, on-premise AI to ingest statutory directives and evaluate organizational exposure in minutes.
         </p>
         <div class="hero-actions">
-          <a href="#wedge" class="btn-primary">Test Live AML Wedge</a>
-          <a href="#architecture" class="btn-secondary">View 22-Module Architecture</a>
+          <button type="button" onclick="switchHeroTab('survey')" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none;">
+            <span>📋 Take 2-Min Audit Readiness Survey</span>
+            <span style="background:rgba(255,255,255,0.22);padding:2px 7px;border-radius:4px;font-size:10px;letter-spacing:0.04em;">INSTANT</span>
+          </button>
+          <a href="#survey-benchmark" class="btn-secondary">Benchmark Rails</a>
+          <a href="#deployment" class="btn-secondary" style="border:none;background:transparent;text-decoration:underline;padding:12px 6px;font-size:13px;color:var(--slate-muted);">Explore AML Engine →</a>
         </div>
         <div class="metrics-strip" id="metrics-strip">
           <div class="metric-item">
@@ -956,47 +1282,200 @@
         </div>
       </div>
 
-      <!-- Hero Executive Synthesis Card with Animated Progress and Stagger -->
+      <!-- Hero Card with Dual Mode: Audit Readiness Survey (Active) & Live Synthesis -->
       <div class="exec-card" id="exec-synthesis-card">
-        <div class="exec-header">
-          <span class="title">Executive Synthesis</span>
-          <span class="eval-id">
-            <span class="pulse-blue"></span>
-            EVAL #A-7731 · 0.84s
-          </span>
+        <!-- Interactive Card Tab Switcher -->
+        <div class="exec-tab-bar">
+          <button type="button" class="exec-tab-btn active" id="tab-btn-survey" onclick="switchHeroTab('survey')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Audit Readiness Survey
+            <span class="tab-chip">2-MIN</span>
+          </button>
+          <button type="button" class="exec-tab-btn" id="tab-btn-synthesis" onclick="switchHeroTab('synthesis')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Live Synthesis Demo
+          </button>
         </div>
-        <div class="exec-body">
-          <h2>These processes are <span class="highlight-green">92% likely</span> to be subject to this regulation.</h2>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" id="coverage-progress-bar"></div>
-          </div>
-          <div class="exec-sub">3 / 4 of exposed processes already have associated mitigating controls.</div>
-          
-          <div class="exec-rows">
-            <div class="exec-row" style="transition-delay: 200ms;">
-              <span class="code">P-101</span>
-              <span class="name">VISA Settlement</span>
-              <span class="pct">94%</span>
+
+        <!-- TAB 1: HERO CUSTOMER ACQUISITION SURVEY -->
+        <div id="panel-survey" class="survey-panel">
+          <!-- Step 1 of 3: License Type -->
+          <div id="hero-step-1" class="survey-step-content">
+            <div class="survey-step-indicator">
+              <span>Step 01 of 03 · Institutional Profile</span>
+              <span class="step-num">MAS Scope</span>
             </div>
-            <div class="exec-row gap-row" style="transition-delay: 350ms;">
-              <span class="code">P-102</span>
-              <span class="name">PayPal Payouts</span>
-              <span class="pct">88%</span>
+            <h3 class="survey-title">What is your primary regulatory entity classification?</h3>
+            <p class="survey-subtitle">Determines statutory notice threshold (SGD 1,000) and mandatory screening rules.</p>
+            <div class="survey-pills">
+              <div class="survey-pill selected" onclick="selectSurveyProfile(this, 'Major Payment Institution (MPI)')">
+                <span>Major Payment Institution (MPI)</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill" onclick="selectSurveyProfile(this, 'Standard Payment Institution (SPI)')">
+                <span>Standard Payment Inst (SPI)</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill" onclick="selectSurveyProfile(this, 'Commercial / Merchant Bank')">
+                <span>Commercial / Merchant Bank</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill" onclick="selectSurveyProfile(this, 'GRC / Legal Advisory Partner')">
+                <span>GRC / Legal Advisory Partner</span>
+                <span class="check-icon">✓</span>
+              </div>
             </div>
-            <div class="exec-row" style="transition-delay: 500ms;">
-              <span class="code">P-103</span>
-              <span class="name">OCBC FAST Clearing</span>
-              <span class="pct">76%</span>
+            <div class="survey-btn-row">
+              <button type="button" class="btn-survey-next" onclick="heroSurveyNext(2)">Next: Active Payment Rails →</button>
             </div>
           </div>
 
-          <div class="exec-alert">
-            ⚠️ <b>P-102 (Merchant Wallet Payouts / PayPal)</b> lacks mandatory automated PEP screening prior to credit release.
+          <!-- Step 2 of 3: Rails in Scope -->
+          <div id="hero-step-2" class="survey-step-content" style="display: none;">
+            <div class="survey-step-indicator">
+              <span>Step 02 of 03 · Operational Rails</span>
+              <span class="step-num">Directives</span>
+            </div>
+            <h3 class="survey-title">Select transaction flows in operational scope:</h3>
+            <p class="survey-subtitle">Identifies whether MAS Notice 626 and TRM guidelines apply to payout triggers.</p>
+            <div class="survey-pills">
+              <div class="survey-pill selected" onclick="toggleHeroRail(this, 'VISA/Mastercard Settlement')">
+                <span>Card Network (VISA / MC)</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill selected" onclick="toggleHeroRail(this, 'Merchant Wallets / PayPal / GrabPay')">
+                <span>Merchant Wallets &amp; Payouts</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill selected" onclick="toggleHeroRail(this, 'FAST / PayNow RTGS')">
+                <span>FAST / PayNow RTGS</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill" onclick="toggleHeroRail(this, 'Cross-Border Wire / DPT')">
+                <span>Cross-Border Wire / DPT</span>
+                <span class="check-icon">✓</span>
+              </div>
+            </div>
+            <div class="survey-btn-row">
+              <button type="button" class="btn-survey-back" onclick="heroSurveyBack(1)">← Back</button>
+              <button type="button" class="btn-survey-next" onclick="heroSurveyNext(3)">Next: Contact &amp; Report →</button>
+            </div>
+          </div>
+
+          <!-- Step 3 of 3: Contact & Delivery -->
+          <div id="hero-step-3" class="survey-step-content" style="display: none;">
+            <div class="survey-step-indicator">
+              <span>Step 03 of 03 · Deliver Diagnostic</span>
+              <span class="step-num">Final Step</span>
+            </div>
+            <h3 class="survey-title">Where should we deliver your regulatory exposure report?</h3>
+            <p class="survey-subtitle">Deterministic scoring is computed instantly on-screen with zero cloud retention.</p>
+            <div class="survey-inputs">
+              <div class="survey-field">
+                <label>Institutional Work Email</label>
+                <input type="email" id="hero-email-input" placeholder="e.g. alex.chen@institution.com.sg" required>
+              </div>
+              <div class="survey-field">
+                <label>Organization / Financial Entity</label>
+                <input type="text" id="hero-org-input" placeholder="e.g. AsiaPay Technologies Pte Ltd" required>
+              </div>
+              <div class="survey-field">
+                <label>Designation / Role</label>
+                <input type="text" id="hero-role-input" placeholder="e.g. Head of Compliance / CCO">
+              </div>
+            </div>
+            <div class="survey-btn-row">
+              <button type="button" class="btn-survey-back" onclick="heroSurveyBack(2)">← Back</button>
+              <button type="button" class="btn-survey-next" onclick="submitHeroSurvey()" id="hero-submit-btn">Generate Audit Exposure Diagnostic ⚡</button>
+            </div>
+          </div>
+
+          <!-- Instant Assessment Result State -->
+          <div id="hero-step-result" class="survey-result-box" style="display: none;">
+            <div class="result-score-badge">
+              <span>⚠️ STATUTORY EXPOSURE: 88% SENSITIVITY</span>
+            </div>
+            <h3 class="survey-title" style="margin-top:0;">Diagnostic Complete</h3>
+            <div class="result-card-inner">
+              <div class="result-row">
+                <span class="k">Entity Scope:</span>
+                <span class="v" id="res-entity">Major Payment Institution</span>
+              </div>
+              <div class="result-row">
+                <span class="k">Applicable Mandate:</span>
+                <span class="v" style="color:var(--blue-ai);">MAS Notice 626 §6.1–6.14</span>
+              </div>
+              <div class="result-row">
+                <span class="k">Flagged Control Gap:</span>
+                <span class="v" style="color:var(--amber);">P-102 (Merchant Payouts)</span>
+              </div>
+              <div class="result-row">
+                <span class="k">Identified Vulnerability:</span>
+                <span class="v" style="font-size:11px;color:var(--slate-body);text-align:right;">Missing automated PEP check prior to credit release</span>
+              </div>
+              <div class="result-row">
+                <span class="k">Estimated Audit Prep:</span>
+                <span class="v" style="color:var(--emerald);">0.84s (vs 4 weeks manual)</span>
+              </div>
+            </div>
+            <div class="result-confirm-banner" id="res-confirm-msg">
+              ✅ <b>Assessment Pack Scheduled:</b> A confidential gap briefing &amp; sample control matrix has been dispatched to <span id="res-email-display">your work email</span>.
+            </div>
+            <div class="survey-btn-row">
+              <button type="button" class="btn-survey-back" onclick="resetHeroSurvey()">Retake Survey</button>
+              <a href="#consultancies" class="btn-survey-next" style="text-decoration:none;">Schedule Architecture Briefing →</a>
+            </div>
+          </div>
+
+          <!-- Footer reassurance -->
+          <div class="exec-footer" style="padding:10px 0 0 0;background:transparent;border-top:1px solid var(--border);">
+            <span>Confidential Assessment</span>
+            <span>Zero Cloud Telemetry</span>
           </div>
         </div>
-        <div class="exec-footer">
-          <span>Demonstration dataset</span>
-          <span>Deterministic Scoring</span>
+
+        <!-- TAB 2: LIVE SYNTHESIS DEMO (Pre-existing card view) -->
+        <div id="panel-synthesis" style="display: none;">
+          <div class="exec-header">
+            <span class="title">Executive Synthesis</span>
+            <span class="eval-id">
+              <span class="pulse-blue"></span>
+              EVAL #A-7731 · 0.84s
+            </span>
+          </div>
+          <div class="exec-body">
+            <h2>These processes are <span class="highlight-green">92% likely</span> to be subject to this regulation.</h2>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" id="coverage-progress-bar"></div>
+            </div>
+            <div class="exec-sub">3 / 4 of exposed processes already have associated mitigating controls.</div>
+            
+            <div class="exec-rows">
+              <div class="exec-row" style="transition-delay: 200ms;">
+                <span class="code">P-101</span>
+                <span class="name">VISA Settlement</span>
+                <span class="pct">94%</span>
+              </div>
+              <div class="exec-row gap-row" style="transition-delay: 350ms;">
+                <span class="code">P-102</span>
+                <span class="name">PayPal Payouts</span>
+                <span class="pct">88%</span>
+              </div>
+              <div class="exec-row" style="transition-delay: 500ms;">
+                <span class="code">P-103</span>
+                <span class="name">OCBC FAST Clearing</span>
+                <span class="pct">76%</span>
+              </div>
+            </div>
+
+            <div class="exec-alert">
+              ⚠️ <b>P-102 (Merchant Wallet Payouts / PayPal)</b> lacks mandatory automated PEP screening prior to credit release.
+            </div>
+          </div>
+          <div class="exec-footer">
+            <span>Demonstration dataset</span>
+            <span>Deterministic Scoring</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1023,9 +1502,191 @@
       <div class="ticker-item">Cross-border settlement <span class="diamond">◆</span></div>
       <div class="ticker-item">Stored value facilities <span class="diamond">◆</span></div>
     </div>
-    <div class="ticker-fade-l"></div>
-    <div class="ticker-fade-r"></div>
-  </div>
+  <!-- 01 / Dedicated Customer Acquisition & Audit Readiness Diagnostic Benchmark -->
+  <section id="survey-benchmark" class="section-survey">
+    <div class="container reveal">
+      <div class="sec-tag">01 / Audit Readiness Diagnostic</div>
+      <h2 class="sec-heading">MAS Notice 626 Compliance &amp; Gap Exposure Benchmark</h2>
+      <p class="sec-desc">
+        Evaluate your institution's statutory exposure across payment rails in under 2 minutes. Receive an instant gap diagnostic and customized control mitigation matrix.
+      </p>
+
+      <div class="survey-full-grid">
+        <!-- Interactive Form Box -->
+        <div class="survey-container-box">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;color:var(--blue-ai);font-weight:700;margin-bottom:8px;">
+            Institutional Self-Assessment Form
+          </div>
+          <h3 style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:12px;">Scope Your Institution</h3>
+
+          <div style="margin-bottom:20px;">
+            <label style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;color:var(--slate-muted);display:block;margin-bottom:8px;font-weight:600;">
+              1. Institutional Entity Classification
+            </label>
+            <div class="survey-pills" id="full-profile-pills">
+              <div class="survey-pill selected" onclick="setFullProfile(this, 'Major Payment Institution (MPI)')">
+                <span>Major Payment Institution (MPI)</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill" onclick="setFullProfile(this, 'Standard Payment Institution (SPI)')">
+                <span>Standard Payment Inst (SPI)</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill" onclick="setFullProfile(this, 'Commercial / Merchant Bank')">
+                <span>Commercial / Merchant Bank</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill" onclick="setFullProfile(this, 'GRC / Legal Advisory Partner')">
+                <span>GRC / Legal Advisory Partner</span>
+                <span class="check-icon">✓</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:20px;">
+            <label style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;color:var(--slate-muted);display:block;margin-bottom:8px;font-weight:600;">
+              2. Active Transaction Rails in Operational Scope
+            </label>
+            <div class="survey-pills" id="full-rails-pills">
+              <div class="survey-pill selected" onclick="toggleFullRail(this, 'VISA/Mastercard Settlement')">
+                <span>Card Network (VISA / MC)</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill selected" onclick="toggleFullRail(this, 'Merchant Wallets / GrabPay / PayPal')">
+                <span>Merchant Wallets &amp; Payouts</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill selected" onclick="toggleFullRail(this, 'FAST / PayNow RTGS')">
+                <span>FAST / PayNow RTGS</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill" onclick="toggleFullRail(this, 'Cross-Border Wire / DPT')">
+                <span>Cross-Border Wire / DPT</span>
+                <span class="check-icon">✓</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:20px;">
+            <label style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;color:var(--slate-muted);display:block;margin-bottom:8px;font-weight:600;">
+              3. Primary Compliance Operational Bottleneck
+            </label>
+            <div class="survey-pills">
+              <div class="survey-pill selected" onclick="setFullBottleneck(this, 'Manual Legal Memo Mapping')">
+                <span>Manual counsel memo mapping</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill" onclick="setFullBottleneck(this, 'Spreadsheet Control Gaps')">
+                <span>Control gap detection across rails</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill" onclick="setFullBottleneck(this, 'Audit Prep Duration (4-8 weeks)')">
+                <span>4–8 weeks statutory audit cycle</span>
+                <span class="check-icon">✓</span>
+              </div>
+              <div class="survey-pill" onclick="setFullBottleneck(this, 'Automated PEP & Sanctions Rules')">
+                <span>PEP / Sanctions release latency</span>
+                <span class="check-icon">✓</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:24px;">
+            <label style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;color:var(--slate-muted);display:block;margin-bottom:8px;font-weight:600;">
+              4. Executive Contact &amp; Benchmark Report Delivery
+            </label>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+              <div class="survey-field">
+                <label>Institutional Work Email</label>
+                <input type="email" id="full-email" placeholder="compliance.head@institution.com.sg" required>
+              </div>
+              <div class="survey-field">
+                <label>Financial Institution / Company Name</label>
+                <input type="text" id="full-org" placeholder="e.g. Asia Capital Payments Pte Ltd" required>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <div class="survey-field">
+                <label>Designation / Role</label>
+                <input type="text" id="full-role" placeholder="e.g. Chief Compliance Officer">
+              </div>
+              <div class="survey-field">
+                <label>Current Control Inventory Size</label>
+                <select id="full-controls" style="border:1px solid var(--border);border-radius:6px;padding:9px 12px;font-size:13px;color:var(--navy);background:#FFF;">
+                  <option value="50-150">50 – 150 internal controls</option>
+                  <option value="under-50">&lt; 50 controls (Emerging fintech)</option>
+                  <option value="over-150">150+ controls (Enterprise / Tier-1 Bank)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn-primary" style="width:100%;padding:14px;font-size:14px;border:none;cursor:pointer;" onclick="submitFullBenchmark()">
+            Generate Instant Audit Readiness Diagnostic ⚡
+          </button>
+        </div>
+
+        <!-- Live Diagnostic Preview Card -->
+        <div class="survey-live-card" id="full-diagnostic-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--slate-muted);font-weight:700;">
+              Live Benchmark Gauge
+            </div>
+            <span class="tag ai">Deterministic</span>
+          </div>
+
+          <h4 style="font-size:20px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:8px;">
+            MAS Regulatory Exposure
+          </h4>
+          <p style="font-size:13px;color:var(--slate-body);line-height:1.5;">
+            Dynamic risk sensitivity calculated from your active payment settlement rails.
+          </p>
+
+          <div class="risk-meter">
+            <div class="risk-meter-header">
+              <span>Obligation Sensitivity</span>
+              <span id="full-gauge-pct" style="color:var(--amber);">88% High Sensitivity</span>
+            </div>
+            <div class="risk-meter-bar">
+              <div class="risk-meter-fill" id="full-gauge-fill" style="width: 88%;"></div>
+            </div>
+          </div>
+
+          <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+            <div class="result-row">
+              <span class="k">Governing Circular:</span>
+              <span class="v" style="color:var(--blue-ai);">MAS Notice 626 (PS Act)</span>
+            </div>
+            <div class="result-row">
+              <span class="k">Key Obligation:</span>
+              <span class="v" style="font-size:11px;text-align:right;">Mandatory PEP Verification &sect;6.4</span>
+            </div>
+            <div class="result-row">
+              <span class="k">High-Risk Rail:</span>
+              <span class="v" style="color:var(--amber);">Merchant Wallets (P-102)</span>
+            </div>
+            <div class="result-row">
+              <span class="k">Manual Mapping Effort:</span>
+              <span class="v" style="color:var(--slate-body);text-decoration:line-through;">160 Hours</span>
+            </div>
+            <div class="result-row">
+              <span class="k">GRC Nexus Mapping:</span>
+              <span class="v" style="color:var(--emerald);">0.84 Seconds (99.5% faster)</span>
+            </div>
+          </div>
+
+          <div id="full-result-success" style="display:none;margin-top:20px;" class="result-confirm-banner">
+            ✅ <b>Benchmark Report Queued:</b> Detailed gap matrix and deployment schedule dispatched to <span id="full-res-email" style="font-weight:700;">your email</span>.
+          </div>
+
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);font-size:11px;color:var(--slate-muted);display:flex;justify-content:space-between;">
+            <span>Evaluated locally</span>
+            <span>Zero cloud data retention</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Capabilities Section (Interactive Tabs) -->
   <section id="capabilities" class="section-light">
@@ -1117,36 +1778,36 @@
     </div>
   </section>
 
-  <!-- The 16-Week Wedge -->
-  <section id="wedge" class="section-gray">
+  <!-- Phased Deployment Lifecycle -->
+  <section id="deployment" class="section-gray">
     <div class="container reveal">
-      <div class="sec-tag">02 / The 16-Week Wedge</div>
-      <h2 class="sec-heading">One domain, four payment rails, one working wedge.</h2>
+      <div class="sec-tag">02 / Phased Deployment</div>
+      <h2 class="sec-heading">Targeted validation across core payment rails in weeks, not years.</h2>
       <p class="sec-desc">
-        We do not start with a company-wide rollout. The wedge is the Anti-Money Laundering domain across the rails that actually move money — VISA settlement, PayPal merchant wallets and OCBC FAST clearing — proven end to end before anything else is added.
+        We prove deterministic regulatory compliance on the transaction rails that actually move institutional capital — VISA card settlement, PayPal merchant wallets, and OCBC FAST clearing — before scaling across the broader enterprise risk universe.
       </p>
 
       <div class="cards-grid-3">
         <div class="wf-card" style="cursor: default;">
           <div class="wf-card-header">
-            <span class="num">Weeks 1–4</span>
+            <span class="num">Phase 1</span>
           </div>
           <div class="title">Ingest and map</div>
-          <p class="body">Statutory directives, counsel memos and the institution's process taxonomy loaded into the platform.</p>
+          <p class="body">Statutory directives, counsel memos and the institution's process taxonomy ingested into the platform.</p>
         </div>
         <div class="wf-card" style="cursor: default;">
           <div class="wf-card-header">
-            <span class="num">Weeks 5–10</span>
+            <span class="num">Phase 2</span>
           </div>
           <div class="title">Evaluate and flag</div>
-          <p class="body">Semantic evaluation run across the payment rails in scope, with unmitigated controls surfaced as gaps.</p>
+          <p class="body">Deterministic semantic evaluation run across payment rails in scope, with unmitigated controls surfaced as gaps.</p>
         </div>
         <div class="wf-card" style="cursor: default;">
           <div class="wf-card-header">
-            <span class="num">Weeks 11–16</span>
+            <span class="num">Phase 3</span>
           </div>
-          <div class="title">Remediate and hand over</div>
-          <p class="body">Gap remediation pack, board reporting and the evidence trail a regulator can be walked through.</p>
+          <div class="title">Verify and deliver</div>
+          <p class="body">Audit-ready remediation packs, board reporting summaries, and the immutable evidence trail a regulator can walk through.</p>
         </div>
       </div>
 
@@ -1165,7 +1826,7 @@
       <div class="sec-tag">03 / Architecture Map</div>
       <h2 class="sec-heading">22 modules. One obligation engine at the centre.</h2>
       <p class="sec-desc">
-        The wedge sits inside CORE-02: Regulatory Obligations. Every other module is a surface the same evidence already feeds — no re-keying, no parallel spreadsheet.
+        CORE-02: Regulatory Obligations serves as the foundational core engine. Every other module is a surface the same deterministic evidence already feeds — no re-keying, no parallel spreadsheets.
       </p>
 
       <div class="arch-grid">
@@ -1195,7 +1856,7 @@
             <div class="arch-item active-wedge">
               <div class="item-top">
                 <span class="code">CORE-02</span>
-                <span class="badge">ACTIVE WEDGE</span>
+                <span class="badge">ACTIVE MODULE</span>
               </div>
               <div class="name">Regulatory Obligations</div>
             </div>
@@ -1282,7 +1943,7 @@
             <div>A preserved audit trail showing which reading of the directive produced which flag.</div>
           </li>
         </ul>
-        <a href="#wedge" class="btn-partner">Open the engine and see the output</a>
+        <a href="#deployment" class="btn-partner">Open the engine and see the output</a>
       </div>
     </div>
   </section>
@@ -1318,7 +1979,7 @@
         The sample MAS Notice 626 directive and counsel memo are already loaded. Press evaluate and read the gap report.
       </p>
       <div class="closing-actions">
-        <a href="#wedge" class="btn-primary">Launch Live AML Parser ⚡</a>
+        <a href="#deployment" class="btn-primary">Launch Live AML Parser ⚡</a>
         <a href="#architecture" class="btn-secondary">View Architecture Map</a>
       </div>
     </div>
@@ -1445,6 +2106,156 @@
       if (tagEl && textEl && stepsData[index]) {
         tagEl.textContent = stepsData[index].tag;
         textEl.textContent = stepsData[index].text;
+      }
+    }
+
+    // 6. Hero Survey Tab & Navigation
+    function switchHeroTab(tab) {
+      const btnSurvey = document.getElementById('tab-btn-survey');
+      const btnSynthesis = document.getElementById('tab-btn-synthesis');
+      const panelSurvey = document.getElementById('panel-survey');
+      const panelSynthesis = document.getElementById('panel-synthesis');
+
+      if (!btnSurvey || !btnSynthesis || !panelSurvey || !panelSynthesis) return;
+
+      if (tab === 'survey') {
+        btnSurvey.classList.add('active');
+        btnSynthesis.classList.remove('active');
+        panelSurvey.style.display = 'flex';
+        panelSynthesis.style.display = 'none';
+      } else {
+        btnSynthesis.classList.add('active');
+        btnSurvey.classList.remove('active');
+        panelSynthesis.style.display = 'block';
+        panelSurvey.style.display = 'none';
+
+        // Trigger progress bar if switching to synthesis
+        const pBar = document.getElementById('coverage-progress-bar');
+        if (pBar) pBar.style.width = '92%';
+      }
+    }
+
+    let surveyProfile = 'Major Payment Institution (MPI)';
+    function selectSurveyProfile(el, profile) {
+      document.querySelectorAll('#hero-step-1 .survey-pill').forEach(p => p.classList.remove('selected'));
+      el.classList.add('selected');
+      surveyProfile = profile;
+    }
+
+    function toggleHeroRail(el, rail) {
+      el.classList.toggle('selected');
+    }
+
+    function heroSurveyNext(step) {
+      const s1 = document.getElementById('hero-step-1');
+      const s2 = document.getElementById('hero-step-2');
+      const s3 = document.getElementById('hero-step-3');
+      const res = document.getElementById('hero-step-result');
+
+      if (s1) s1.style.display = 'none';
+      if (s2) s2.style.display = 'none';
+      if (s3) s3.style.display = 'none';
+      if (res) res.style.display = 'none';
+
+      if (step === 1 && s1) s1.style.display = 'block';
+      if (step === 2 && s2) s2.style.display = 'block';
+      if (step === 3 && s3) s3.style.display = 'block';
+    }
+
+    function heroSurveyBack(step) {
+      heroSurveyNext(step);
+    }
+
+    function submitHeroSurvey() {
+      const emailInput = document.getElementById('hero-email-input');
+      const submitBtn = document.getElementById('hero-submit-btn');
+
+      if (!emailInput || !emailInput.value || !emailInput.value.includes('@')) {
+        if (emailInput) {
+          emailInput.focus();
+          emailInput.style.borderColor = 'var(--amber)';
+        }
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.textContent = 'Analyzing Regulatory Rails... ⚡';
+        submitBtn.disabled = true;
+      }
+
+      setTimeout(() => {
+        const s3 = document.getElementById('hero-step-3');
+        const res = document.getElementById('hero-step-result');
+        const resEntity = document.getElementById('res-entity');
+        const resEmail = document.getElementById('res-email-display');
+
+        if (s3) s3.style.display = 'none';
+        if (res) res.style.display = 'flex';
+        if (resEntity) resEntity.textContent = surveyProfile;
+        if (resEmail) resEmail.textContent = emailInput.value;
+
+        if (submitBtn) {
+          submitBtn.textContent = 'Generate Audit Exposure Diagnostic ⚡';
+          submitBtn.disabled = false;
+        }
+      }, 600);
+    }
+
+    function resetHeroSurvey() {
+      const res = document.getElementById('hero-step-result');
+      const s1 = document.getElementById('hero-step-1');
+      if (res) res.style.display = 'none';
+      if (s1) s1.style.display = 'block';
+    }
+
+    // 7. Full Benchmark Section Interactions
+    function setFullProfile(el, profile) {
+      document.querySelectorAll('#full-profile-pills .survey-pill').forEach(p => p.classList.remove('selected'));
+      el.classList.add('selected');
+      updateFullBenchmarkGauge();
+    }
+
+    function toggleFullRail(el, rail) {
+      el.classList.toggle('selected');
+      updateFullBenchmarkGauge();
+    }
+
+    function setFullBottleneck(el, bottleneck) {
+      el.parentElement.querySelectorAll('.survey-pill').forEach(p => p.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+
+    function updateFullBenchmarkGauge() {
+      const selectedRails = document.querySelectorAll('#full-rails-pills .survey-pill.selected').length;
+      const fillEl = document.getElementById('full-gauge-fill');
+      const pctEl = document.getElementById('full-gauge-pct');
+      
+      let pct = 60 + (selectedRails * 9);
+      if (pct > 96) pct = 96;
+
+      if (fillEl && pctEl) {
+        fillEl.style.width = pct + '%';
+        pctEl.textContent = pct + '% High Sensitivity';
+      }
+    }
+
+    function submitFullBenchmark() {
+      const email = document.getElementById('full-email');
+      const successBanner = document.getElementById('full-result-success');
+      const emailDisplay = document.getElementById('full-res-email');
+
+      if (!email || !email.value || !email.value.includes('@')) {
+        if (email) {
+          email.focus();
+          email.style.borderColor = 'var(--amber)';
+        }
+        return;
+      }
+
+      if (successBanner && emailDisplay) {
+        emailDisplay.textContent = email.value;
+        successBanner.style.display = 'block';
+        successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     }
   </script>

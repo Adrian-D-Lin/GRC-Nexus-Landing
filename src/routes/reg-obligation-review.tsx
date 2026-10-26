@@ -63,7 +63,7 @@ function Dashboard() {
         <header className="flex h-14 shrink-0 items-center justify-between gap-4 border-b px-5">
           <div className="flex min-w-0 items-center gap-3">
             <span className="hidden rounded border border-ai/40 bg-ai/10 px-2 py-0.5 font-mono text-[10px] text-ai lg:inline">
-              Cohort 2 Wedge: Payment Rails (VISA, PayPal, OCBC)
+              Operational Scope: Payment Rails (VISA, PayPal, OCBC)
             </span>
             <div className="min-w-0">
               <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Active Domain</div>
@@ -267,7 +267,7 @@ function ArchMap() {
                   <div key={m} className={`rounded-md border px-3 py-2.5 ${active ? "glow-success border-success/60 bg-success/5" : "bg-terminal"}`}>
                     <div className="flex items-center justify-between gap-2">
                       <span className={`font-mono text-[10px] ${active ? "text-success" : "text-ai"}`}>{code}</span>
-                      {active && <span className="rounded bg-success px-1.5 py-0.5 font-mono text-[9px] font-bold text-primary-foreground">ACTIVE WEDGE</span>}
+                      {active && <span className="rounded bg-success px-1.5 py-0.5 font-mono text-[9px] font-bold text-primary-foreground">ACTIVE MODULE</span>}
                     </div>
                     <div className="mt-0.5 text-xs font-medium">{name}</div>
                   </div>

@@ -47,10 +47,10 @@ const capabilities = [
   { t: "Evidence-Grade Output", d: "Triggers, citations and gap flags come out as a reviewable record, not a summary paragraph.", tone: "text-warning" },
 ];
 
-const wedge = [
-  { w: "Weeks 1–4", t: "Ingest and map", d: "Statutory directives, counsel memos and the institution's process taxonomy loaded into the platform." },
-  { w: "Weeks 5–10", t: "Evaluate and flag", d: "Semantic evaluation run across the payment rails in scope, with unmitigated controls surfaced as gaps." },
-  { w: "Weeks 11–16", t: "Remediate and hand over", d: "Gap remediation pack, board reporting and the evidence trail a regulator can be walked through." },
+const deployment = [
+  { w: "Phase 1", t: "Ingest and map", d: "Statutory directives, counsel memos and the institution's process taxonomy ingested into the platform." },
+  { w: "Phase 2", t: "Evaluate and flag", d: "Deterministic semantic evaluation run across the payment rails in scope, with unmitigated controls surfaced as gaps." },
+  { w: "Phase 3", t: "Verify and deliver", d: "Audit-ready remediation packs, board reporting summaries and the immutable evidence trail a regulator can walk through." },
 ];
 
 const security = [
@@ -64,7 +64,7 @@ function Landing() {
       <Header />
       <Hero />
       <Capabilities />
-      <Wedge />
+      <Deployment />
       <Architecture />
       <Consultancies />
       <Security />
@@ -79,14 +79,10 @@ function Header() {
     <header className="sticky top-0 z-20 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5">
         <div className="flex items-center gap-3">
-          <span className="relative flex h-2 w-2 shrink-0">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
-          </span>
           <span className="font-mono text-sm font-bold uppercase tracking-widest">GRC NEXUS</span>
         </div>
         <nav className="hidden items-center gap-6 text-xs font-medium text-muted-foreground lg:flex">
-          {[["#capabilities", "Capabilities"], ["#wedge", "The 16-Week Wedge"], ["#architecture", "Architecture Map"], ["#consultancies", "For Consultancies"]].map(([href, label]) => (
+          {[["#capabilities", "Capabilities"], ["#deployment", "Deployment"], ["#architecture", "Architecture Map"], ["#consultancies", "For Consultancies"]].map(([href, label]) => (
             <a key={href} href={href} className="transition hover:text-foreground">{label}</a>
           ))}
         </nav>
@@ -116,7 +112,7 @@ function Hero() {
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link to="/reg-obligation-review" className="rounded-md bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition hover:brightness-110">
-              Test Live AML Wedge
+              Explore Live AML Engine
             </Link>
             <Link to="/reg-obligation-review" search={{ tab: "map" }} className="rounded-md border border-border bg-card px-5 py-3 text-sm font-semibold transition hover:bg-secondary">
               View 22-Module Architecture
@@ -237,17 +233,17 @@ function Capabilities() {
   );
 }
 
-function Wedge() {
+function Deployment() {
   return (
-    <section id="wedge" className="scroll-mt-20 border-b border-border bg-secondary px-5 py-20">
+    <section id="deployment" className="scroll-mt-20 border-b border-border bg-secondary px-5 py-20">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          n="02 / The 16-Week Wedge"
-          t="One domain, four payment rails, one working wedge."
-          d="We do not start with a company-wide rollout. The wedge is the Anti-Money Laundering domain across the rails that actually move money — VISA settlement, PayPal merchant wallets and OCBC FAST clearing — proven end to end before anything else is added."
+          n="02 / Phased Deployment"
+          t="Targeted validation across core payment rails in weeks, not years."
+          d="We prove deterministic regulatory compliance on the transaction rails that actually move institutional capital — VISA card settlement, PayPal merchant wallets, and OCBC FAST clearing — before scaling across the broader enterprise risk universe."
         />
         <div className="mt-10 grid gap-3 md:grid-cols-3">
-          {wedge.map((s) => (
+          {deployment.map((s) => (
             <div key={s.w} className="rounded-md border border-border bg-card p-5">
               <div className="font-mono text-[10px] uppercase tracking-widest text-primary">{s.w}</div>
               <div className="mt-2 text-sm font-semibold">{s.t}</div>
@@ -272,7 +268,7 @@ function Architecture() {
         <SectionHeading
           n="03 / Architecture Map"
           t={`${totalModules} modules. One obligation engine at the centre.`}
-          d="The wedge sits inside CORE-02: Regulatory Obligations. Every other module is a surface the same evidence already feeds — no re-keying, no parallel spreadsheet."
+          d="CORE-02: Regulatory Obligations serves as the foundational core engine. Every other module is a surface the same deterministic evidence already feeds — no re-keying, no parallel spreadsheets."
         />
         <div className="mt-10 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {modules.map((g) => (
@@ -289,7 +285,7 @@ function Architecture() {
                     <div key={m} className={`rounded-md border px-3 py-2 ${active ? "glow-success border-success/40 bg-success/5" : "border-border bg-secondary"}`}>
                       <div className="flex items-center justify-between gap-2">
                         <span className={`font-mono text-[10px] ${active ? "text-success" : "text-ai"}`}>{code}</span>
-                        {active && <span className="rounded bg-success px-1.5 py-0.5 font-mono text-[9px] font-bold text-primary-foreground">ACTIVE WEDGE</span>}
+                        {active && <span className="rounded bg-success px-1.5 py-0.5 font-mono text-[9px] font-bold text-primary-foreground">ACTIVE MODULE</span>}
                       </div>
                       <div className="mt-0.5 text-xs font-medium">{name}</div>
                     </div>
@@ -401,7 +397,7 @@ function Footer() {
           <span className="font-mono text-xs font-bold uppercase tracking-widest">GRC NEXUS</span>
         </div>
         <p className="font-mono text-[10px] text-muted-foreground">
-          GRC Nexus © 2026. A Mamba MVP Studio Portfolio Company (Cohort 2).
+          GRC Nexus © 2026. Enterprise Governance &amp; Regulatory Technology.
         </p>
       </div>
     </footer>

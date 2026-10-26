@@ -63,18 +63,18 @@ flowchart LR
 
 ## 🏛️ The 22-Module Architecture Map
 
-GRC Nexus is designed with a 4-tier modular architecture. While our 16-week studio wedge is focused strictly on **CORE-02: Regulatory Obligations**, the broader platform scales across 22 interconnected modules:
+GRC Nexus is designed with a 4-tier modular architecture. The core launch architecture is focused on **CORE-02: Regulatory Obligations**, while the broader platform scales across 22 interconnected modules:
 
 | Tier | Module Range | Key Capabilities |
 | :--- | :--- | :--- |
 | **Core Platform Services** | `CPS-01` to `CPS-05` | RBAC & access control, immutable audit trail ledger, agent session memory, data sanitization, cross-module relational mapping. |
-| **Core Modules** | `CORE-01` to `CORE-05` | Process Universe (L1-L3 hierarchies), **Regulatory Obligations (Active Wedge)**, Governance Document Library, Product Catalog, Third-Party Registry. |
+| **Core Modules** | `CORE-01` to `CORE-05` | Process Universe (L1-L3 hierarchies), **Regulatory Obligations (Active Engine)**, Governance Document Library, Product Catalog, Third-Party Registry. |
 | **Orbit Operational** | `ORB-01` to `ORB-08` | Control Assessment (CD & OE), Risk Measurement & Invalidation, Audit & Assurance, Compliance Monitoring, Financial Crime Compliance (FCC). |
 | **Halo Reporting** | `HALO-01` to `HALO-04` | Scenario Analysis & Stress Testing, MAS Regulatory Returns Reporting, Executive Risk Cockpits, Board Risk Committee Packs. |
 
 ---
 
-## 💼 The Consultant Wedge (Go-to-Market Strategy)
+## 💼 Consulting Partner Distribution (Go-to-Market Strategy)
 
 Rather than fighting 18-month bank enterprise procurement cycles, GRC Nexus is positioned as a **throughput multiplier for boutique GRC consultancies and 2nd-line risk advisors**:
 - Enables advisory firms to run client gap analyses in **20 minutes** instead of 6 hours.
