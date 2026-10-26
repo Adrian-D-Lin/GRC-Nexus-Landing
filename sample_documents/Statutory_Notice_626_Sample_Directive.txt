@@ -1,11 +1,11 @@
-MAS NOTICE 626 / FINCEN 31 CFR 1010.410 — CROSS-BORDER WIRE TRANSFERS
-REGULATORY AUTHORITY: MONETARY AUTHORITY OF SINGAPORE (MAS)
+STATUTORY NOTICE 626 / FINCEN 31 CFR 1010.410 — CROSS-BORDER WIRE TRANSFERS
+REGULATORY AUTHORITY: FINANCIAL REGULATORY AUTHORITY
 SCOPE: PAYMENT SERVICES ACT (PS ACT) — MONEY LAUNDERING & TERRORISM FINANCING PREVENTION
 
 § 13.4 APPLICABILITY TO ELECTRONIC FUND TRANSFERS & CLEARING:
 A financial institution effecting or processing a cross-border wire transfer, card network clearance, or stored value remittance of SGD 1,000 or more (or equivalent foreign currency) shall:
 (a) Identify and verify the originator and beneficiary identity prior to credit release or clearing execution;
-(b) Screen all transaction counterparties against applicable MAS, UN, and OFAC sanctions lists in real time;
+(b) Screen all transaction counterparties against applicable UN, OFAC, and international sanctions lists in real time;
 (c) Retain full transactional audit records for a mandatory statutory period of not less than 5 years.
 
 § 13.6 ENHANCED DUE DILIGENCE & POLITICALLY EXPOSED PERSONS (PEPs):

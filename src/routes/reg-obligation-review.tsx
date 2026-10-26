@@ -19,7 +19,7 @@ export const Route = createFileRoute("/reg-obligation-review")({
   head: () => ({
     meta: [
       { title: "GRC Nexus — AML Obligation Coverage Engine" },
-      { name: "description", content: "AI-native AML regulatory obligation review and control coverage for payment rails under MAS and FinCEN." },
+      { name: "description", content: "AI-native AML regulatory obligation review and control coverage for payment rails under Statutory and FinCEN." },
       { property: "og:title", content: "GRC Nexus — AML Obligation Coverage Engine" },
       { property: "og:description", content: "Map regulatory directives to processes and mitigating controls in seconds." },
       { property: "og:type", content: "website" },
@@ -112,7 +112,7 @@ function Engine() {
       <section>
         <SectionLabel n="01" t="Dual Document Ingestion" />
         <div className="grid gap-3 lg:grid-cols-2">
-          {[["Regulatory Directive", "MAS-626 / FIN-1010", directive, setDirective], ["Legal Interpretation Memo", "LGL-2026-0417", memo, setMemo]].map(([title, ref, val, set]) => (
+          {[["Regulatory Directive", "NOT-626 / FIN-1010", directive, setDirective], ["Legal Interpretation Memo", "LGL-2026-0417", memo, setMemo]].map(([title, ref, val, set]) => (
             <div key={title as string} className="panel-shadow overflow-hidden rounded-md border bg-card">
               <div className="flex items-center justify-between border-b px-3 py-2">
                 <span className="text-xs font-semibold">{title as string}</span>

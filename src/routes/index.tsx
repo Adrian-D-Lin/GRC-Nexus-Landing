@@ -5,10 +5,10 @@ import { modules, processes, totalModules } from "../lib/grc";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "GRC Nexus — Turn MAS Directives into Instant Control Mapping" },
+      { title: "GRC Nexus — Turn Statutory Directives into Instant Control Mapping" },
       { name: "description", content: "Deterministic, on-premise AI that ingests statutory AML directives and maps them to your processes, controls and audit gaps in minutes." },
-      { property: "og:title", content: "GRC Nexus — Turn MAS Directives into Instant Control Mapping" },
-      { property: "og:description", content: "Turn 60-page MAS directives into instant process and control mapping. Built for Singapore financial institutions and payment processors." },
+      { property: "og:title", content: "GRC Nexus — Turn Statutory Directives into Instant Control Mapping" },
+      { property: "og:description", content: "Turn 60-page statutory directives into instant process and control mapping. Built for Singapore financial institutions and payment processors." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -21,8 +21,8 @@ const workflow = [
     n: "01",
     t: "Ingest",
     short: "Statutory directives and counsel memos, side by side",
-    body: "Drop MAS Notice 626 or FinCEN 31 CFR 1010.410 in one pane and your privileged counsel memo in the other. The directive supplies the obligation; the memo supplies your institution's own reading of it. No templates, no taxonomy project first.",
-    tags: ["MAS Notice 626", "FinCEN 31 CFR 1010.410", "Privileged counsel memos"],
+    body: "Drop Notice 626 or FinCEN 31 CFR 1010.410 in one pane and your privileged counsel memo in the other. The directive supplies the obligation; the memo supplies your institution's own reading of it. No templates, no taxonomy project first.",
+    tags: ["Notice 626", "FinCEN 31 CFR 1010.410", "Privileged counsel memos"],
   },
   {
     n: "02",
@@ -104,7 +104,7 @@ function Hero() {
             Built for Singapore Financial Institutions &amp; Payment Processors
           </span>
           <h1 className="mt-6 text-4xl font-extrabold leading-[1.06] tracking-tight md:text-5xl lg:text-6xl">
-            Turn 60-Page MAS Directives into Instant Process &amp; Control Mapping.
+            Turn 60-Page Statutory Directives into Instant Process &amp; Control Mapping.
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
             Stop drowning in manual regulatory checklists and brittle enterprise GRC suites. GRC Nexus uses
@@ -372,7 +372,7 @@ function Closing() {
           Run your first obligation review in the next ten minutes.
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-          The sample MAS Notice 626 directive and counsel memo are already loaded. Press evaluate and read the
+          The sample Notice 626 directive and counsel memo are already loaded. Press evaluate and read the
           gap report.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">

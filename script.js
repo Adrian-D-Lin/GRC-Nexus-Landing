@@ -2,14 +2,14 @@
 // GRC NEXUS — Interactive Landing Page Script
 // ==========================================================================
 
-const SAMPLE_MAS_626 = `MAS NOTICE 626 (AMENDMENT 2026) / FINCEN CROSS-BORDER DIRECTIVE
+const SAMPLE_DIRECTIVE_626 = `STATUTORY NOTICE 626 (AMENDMENT 2026) / FINCEN CROSS-BORDER DIRECTIVE
 PREVENTION OF MONEY LAUNDERING & COUNTERING TERRORISM FINANCING
 
 1. APPLICABILITY & THRESHOLD MANDATES:
 All Major Payment Institutions, remittance intermediaries, and banking clearing rails facilitating electronic cross-border transactions exceeding SGD 1,000 (or foreign currency equivalent) must perform immediate originator and beneficiary validation.
 
 2. REAL-TIME CONTROLS:
-- Mandatory screening against consolidated UN, OFAC, and MAS statutory sanctions lists prior to transaction execution.
+- Mandatory screening against consolidated UN, OFAC, and statutory sanctions lists prior to transaction execution.
 - Politically Exposed Persons (PEPs) and high-risk beneficiaries require automated enhanced due diligence (EDD) prior to credit release.
 
 3. VELOCITY MONITORING:
@@ -31,12 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Pre-load default directive
   if (regInput && legalInput) {
-    regInput.value = SAMPLE_MAS_626
+    regInput.value = SAMPLE_DIRECTIVE_626
     legalInput.value = SAMPLE_LEGAL_MEMO
   }
 
   btnLoad?.addEventListener("click", () => {
-    regInput.value = SAMPLE_MAS_626
+    regInput.value = SAMPLE_DIRECTIVE_626
     legalInput.value = SAMPLE_LEGAL_MEMO
     triggerEvaluation()
   })

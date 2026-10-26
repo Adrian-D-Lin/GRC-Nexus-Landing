@@ -1,7 +1,7 @@
 # GRC NEXUS — AI-Native Regulatory Obligation & Governance Platform 🛡️
 
 [![Deployment](https://img.shields.io/badge/Deployment-On--Premise_%26_Air--Gapped-slate.svg?style=for-the-badge)](https://adrian-d-lin.github.io/GRC-Nexus-Landing/)
-[![Framework Alignment](https://img.shields.io/badge/Framework-MAS_Notices_%26_FinCEN_Directives-blue.svg?style=for-the-badge)](https://adrian-d-lin.github.io/GRC-Nexus-Landing/)
+[![Framework Alignment](https://img.shields.io/badge/Framework-Statutory_Notices_%26_FinCEN_Directives-blue.svg?style=for-the-badge)](https://adrian-d-lin.github.io/GRC-Nexus-Landing/)
 [![Core Engine](https://img.shields.io/badge/Engine-Deterministic_AML_Mapping-emerald.svg?style=for-the-badge)](https://adrian-d-lin.github.io/GRC-Nexus-Landing/#wedge)
 
 > **Turn 60-Page Regulatory Directives into Instant Process & Control Mappings.**  
@@ -26,7 +26,7 @@ Instead of vague generic compliance chatbots, **GRC Nexus** executes a mathemati
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│  ⚡ EXECUTIVE SYNTHESIS REPORT (MAS NOTICE 626 / FINCEN EVALUATION)    │
+│  ⚡ EXECUTIVE SYNTHESIS REPORT (STATUTORY NOTICE 626 / FINCEN EVALUATION)    │
 ├────────────────────────────────────────────────────────────────────────┤
 │  "These processes are 92% LIKELY to be subject to this regulation.    │
 │   3 / 4 of exposed processes already have associated controls."       │
@@ -48,12 +48,12 @@ Instead of vague generic compliance chatbots, **GRC Nexus** executes a mathemati
 
 ```mermaid
 flowchart LR
-    A["1. INGEST<br/>Statutory Directives (MAS 626 / FinCEN)<br/>+ Privileged Counsel Memos"] --> B["2. SEMANTIC PARSE<br/>Extract Mandatory Process Triggers<br/>& Mitigating Control Criteria"]
+    A["1. INGEST<br/>Statutory Directives (Notice 626 / FinCEN)<br/>+ Privileged Counsel Memos"] --> B["2. SEMANTIC PARSE<br/>Extract Mandatory Process Triggers<br/>& Mitigating Control Criteria"]
     B --> C["3. AUDIT GAP REPORT<br/>% Applicability Scores<br/>+ Coverage Ratios & Vulnerability Alerts"]
 ```
 
 1. **Step 1 — Dual Document Ingestion**:
-   - Ingest raw statutory directives (e.g., MAS Notice 626, FinCEN 31 CFR 1010.410) alongside internal legal counsel memos. The directive supplies the regulatory obligation; the memo provides internal institutional context.
+   - Ingest raw statutory directives (e.g., Notice 626, FinCEN 31 CFR 1010.410) alongside internal legal counsel memos. The directive supplies the regulatory obligation; the memo provides internal institutional context.
 2. **Step 2 — Semantic Criteria Extraction**:
    - The engine deterministically isolates criteria that make a process in-scope (*cross-border settlement, wire transfer, foreign currency, stored value*) and criteria that describe a mitigating control (*sanctions screening, velocity thresholds, PEP verification*).
 3. **Step 3 — Audit Gap & Coverage Report**:
@@ -70,7 +70,7 @@ GRC Nexus is designed with a 4-tier modular architecture. The core launch archit
 | **Core Platform Services** | `CPS-01` to `CPS-05` | RBAC & access control, immutable audit trail ledger, agent session memory, data sanitization, cross-module relational mapping. |
 | **Core Modules** | `CORE-01` to `CORE-05` | Process Universe (L1-L3 hierarchies), **Regulatory Obligations (Active Engine)**, Governance Document Library, Product Catalog, Third-Party Registry. |
 | **Orbit Operational** | `ORB-01` to `ORB-08` | Control Assessment (CD & OE), Risk Measurement & Invalidation, Audit & Assurance, Compliance Monitoring, Financial Crime Compliance (FCC). |
-| **Halo Reporting** | `HALO-01` to `HALO-04` | Scenario Analysis & Stress Testing, MAS Regulatory Returns Reporting, Executive Risk Cockpits, Board Risk Committee Packs. |
+| **Halo Reporting** | `HALO-01` to `HALO-04` | Scenario Analysis & Stress Testing, Statutory Regulatory Returns Reporting, Executive Risk Cockpits, Board Risk Committee Packs. |
 
 ---
 
@@ -79,7 +79,7 @@ GRC Nexus is designed with a 4-tier modular architecture. The core launch archit
 Rather than fighting 18-month bank enterprise procurement cycles, GRC Nexus is positioned as a **throughput multiplier for boutique GRC consultancies and 2nd-line risk advisors**:
 - Enables advisory firms to run client gap analyses in **20 minutes** instead of 6 hours.
 - Operates locally on-premise with zero third-party cloud data leaks (satisfying strict banking secrecy and PDPA requirements).
-- Directly targets the **~350 MAS-regulated financial institutions** in Singapore.
+- Directly targets the **~350 Singapore-licensed financial institutions** in Singapore.
 
 ---
 

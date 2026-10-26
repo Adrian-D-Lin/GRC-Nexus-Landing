@@ -1,4 +1,4 @@
-export const SAMPLE_DIRECTIVE = `MAS NOTICE 626 / FinCEN 31 CFR 1010.410 — CROSS-BORDER WIRE TRANSFERS
+export const SAMPLE_DIRECTIVE = `STATUTORY NOTICE 626 / FinCEN 31 CFR 1010.410 — CROSS-BORDER WIRE TRANSFERS
 § 13.4  A financial institution effecting a cross-border wire transfer
         of SGD 1,000 or more shall screen originator and beneficiary
         against applicable sanctions lists prior to settlement.

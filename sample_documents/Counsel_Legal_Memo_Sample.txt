@@ -2,10 +2,10 @@ PRIVILEGED & CONFIDENTIAL — LEGAL COUNSEL MEMORANDUM
 REF: LGL-2026-0417-AML
 TO: Head of Regulatory Compliance & Chief Risk Officer, Apex Global Payments Pte Ltd
 FROM: Financial Services Regulatory Practice Group
-SUBJECT: Legal Applicability & Exposure Assessment — MAS Notice 626 & FinCEN 31 CFR Requirements
+SUBJECT: Legal Applicability & Exposure Assessment — Notice 626 & FinCEN 31 CFR Requirements
 
 1. EXECUTIVE SUMMARY & COUNSEL OPINION:
-We have conducted a statutory review of your operational payment settlement rails against the recently issued MAS Notice 626 amendments and FinCEN 31 CFR 1010.410 cross-border directives. Based on our analysis, your transaction flows involving VISA card network settlement (Process P-101) and PayPal merchant wallet disbursements (Process P-102) unequivocally fall within the statutory scope of regulated payment and remittance activities.
+We have conducted a statutory review of your operational payment settlement rails against the recently issued Notice 626 amendments and FinCEN 31 CFR 1010.410 cross-border directives. Based on our analysis, your transaction flows involving VISA card network settlement (Process P-101) and PayPal merchant wallet disbursements (Process P-102) unequivocally fall within the statutory scope of regulated payment and remittance activities.
 
 2. DETAILED OBLIGATION MAPPING ACROSS OPERATIONAL RAILS:
 
