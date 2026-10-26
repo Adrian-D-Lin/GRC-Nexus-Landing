@@ -1,9 +1,8 @@
 # GRC NEXUS — AI-Native Regulatory Obligation & Governance Platform 🛡️
 
-[![Live Landing Page](https://img.shields.io/badge/Live_Landing_Page-GitHub_Pages-00f2fe.svg?style=for-the-badge&logo=github)](https://adrian-d-lin.github.io/GRC-Nexus-Landing/)
-[![Cohort 2 Portfolio](https://img.shields.io/badge/Cohort_2-Mamba_MVP_Studio-10b981.svg?style=for-the-badge)](https://github.com/evecount/mvp_program)
-[![Active Wedge](https://img.shields.io/badge/Active_Wedge-AML_Intake_Engine-emerald.svg?style=for-the-badge)](https://adrian-d-lin.github.io/GRC-Nexus-Landing/#live-demo)
-[![Target Jurisdiction](https://img.shields.io/badge/Jurisdiction-Singapore_(MAS)_%26_FinCEN-blue.svg?style=for-the-badge)](https://adrian-d-lin.github.io/GRC-Nexus-Landing/)
+[![Deployment](https://img.shields.io/badge/Deployment-On--Premise_%26_Air--Gapped-slate.svg?style=for-the-badge)](https://adrian-d-lin.github.io/GRC-Nexus-Landing/)
+[![Framework Alignment](https://img.shields.io/badge/Framework-MAS_Notices_%26_FinCEN_Directives-blue.svg?style=for-the-badge)](https://adrian-d-lin.github.io/GRC-Nexus-Landing/)
+[![Core Engine](https://img.shields.io/badge/Engine-Deterministic_AML_Mapping-emerald.svg?style=for-the-badge)](https://adrian-d-lin.github.io/GRC-Nexus-Landing/#wedge)
 
 > **Turn 60-Page Regulatory Directives into Instant Process & Control Mappings.**  
 > Deterministic, on-premise AI compliance architecture engineered for Singapore financial institutions, payment processors, and boutique audit consultancies.
@@ -14,8 +13,8 @@
 
 | Destination | Link |
 | :--- | :--- |
-| 🌐 **Live Landing Page** | [**https://adrian-d-lin.github.io/GRC-Nexus-Landing/**](https://adrian-d-lin.github.io/GRC-Nexus-Landing/) |
-| ⚡ **Interactive AML Parser Cockpit** | [**Jump directly to Live Demo ⚡**](https://adrian-d-lin.github.io/GRC-Nexus-Landing/#live-demo) |
+| 🌐 **Official Landing Page** | [**https://adrian-d-lin.github.io/GRC-Nexus-Landing/**](https://adrian-d-lin.github.io/GRC-Nexus-Landing/) |
+| ⚡ **Interactive AML Parser Cockpit** | [**Jump directly to Live Demo ⚡**](https://adrian-d-lin.github.io/GRC-Nexus-Landing/#wedge) |
 | 🗺️ **22-Module Architecture Roadmap** | [**View 22-Module Architecture**](https://adrian-d-lin.github.io/GRC-Nexus-Landing/#architecture) |
 | 📦 **Core Prototype Repository** | [`Adrian-D-Lin/GRC` (branch: `cybrdeck`)](https://github.com/Adrian-D-Lin/GRC/tree/cybrdeck) |
 
@@ -108,10 +107,8 @@ npm run dev
 npm run test
 ```
 
----
-
-## 📄 Corporate Entity & Studio Affiliation
+## 📄 Corporate Entity
 - **Entity**: Adrish Holdings Pte Ltd (`UEN: 202631108D`)
-- **Founder**: Adrian Lin Daoqin (ex-Standard Chartered Bank, GRC Specialist)
-- **Studio Batch**: **Mamba MVP Venture Studio — Cohort 2 (2026)**
-- **License**: MIT
+- **Product**: GRC Nexus Enterprise Platform
+- **License**: Proprietary / Commercial
+
