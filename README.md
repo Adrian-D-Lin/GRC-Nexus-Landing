@@ -95,7 +95,7 @@ python -m http.server 8000
 ```
 
 ### Full React / TanStack Source Project
-The repository also includes the complete interactive Lovable source:
+The repository also includes the complete interactive TypeScript source:
 ```bash
 # Install dependencies
 npm install
