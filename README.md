@@ -1,29 +1,117 @@
-# Welcome to your Lovable project
+# GRC NEXUS — AI-Native Regulatory Obligation & Governance Platform 🛡️
 
-This project was built with [Lovable](https://lovable.dev).
+[![Live Landing Page](https://img.shields.io/badge/Live_Landing_Page-GitHub_Pages-00f2fe.svg?style=for-the-badge&logo=github)](https://adrian-d-lin.github.io/GRC-Nexus-Landing/)
+[![Cohort 2 Portfolio](https://img.shields.io/badge/Cohort_2-Mamba_MVP_Studio-10b981.svg?style=for-the-badge)](https://github.com/evecount/mvp_program)
+[![Active Wedge](https://img.shields.io/badge/Active_Wedge-AML_Intake_Engine-emerald.svg?style=for-the-badge)](https://adrian-d-lin.github.io/GRC-Nexus-Landing/#live-demo)
+[![Target Jurisdiction](https://img.shields.io/badge/Jurisdiction-Singapore_(MAS)_%26_FinCEN-blue.svg?style=for-the-badge)](https://adrian-d-lin.github.io/GRC-Nexus-Landing/)
 
-## Build with Lovable
+> **Turn 60-Page Regulatory Directives into Instant Process & Control Mappings.**  
+> Deterministic, on-premise AI compliance architecture engineered for Singapore financial institutions, payment processors, and boutique audit consultancies.
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+---
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+## 🚀 Quick Launch Links
 
-## Development
+| Destination | Link |
+| :--- | :--- |
+| 🌐 **Live Landing Page** | [**https://adrian-d-lin.github.io/GRC-Nexus-Landing/**](https://adrian-d-lin.github.io/GRC-Nexus-Landing/) |
+| ⚡ **Interactive AML Parser Cockpit** | [**Jump directly to Live Demo ⚡**](https://adrian-d-lin.github.io/GRC-Nexus-Landing/#live-demo) |
+| 🗺️ **22-Module Architecture Roadmap** | [**View 22-Module Architecture**](https://adrian-d-lin.github.io/GRC-Nexus-Landing/#architecture) |
+| 📦 **Core Prototype Repository** | [`Adrian-D-Lin/GRC` (branch: `cybrdeck`)](https://github.com/Adrian-D-Lin/GRC/tree/cybrdeck) |
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+---
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+## ⚡ The Executive Summary Card (Whiteboard Output)
+
+Instead of vague generic compliance chatbots, **GRC Nexus** executes a mathematically bounded evaluation across pre-mapped payment rails:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│  ⚡ EXECUTIVE SYNTHESIS REPORT (MAS NOTICE 626 / FINCEN EVALUATION)    │
+├────────────────────────────────────────────────────────────────────────┤
+│  "These processes are 92% LIKELY to be subject to this regulation.    │
+│   3 / 4 of exposed processes already have associated controls."       │
+│                                                                        │
+│  • P-101: VISA Settlement Network           │ 94% Likelihood (Covered) │
+│  • P-102: PayPal Merchant Payouts           │ 88% Likelihood (GAP)     │
+│  • P-103: OCBC FAST Real-Time Clearing      │ 76% Likelihood (Covered) │
+│  • P-104: Corporate Internal Payroll        │ 18% Likelihood (Low)     │
+│                                                                        │
+│  ⚠️ IMMEDIATE VULNERABILITY DETECTED:                                  │
+│  Process P-102 lacks mandatory automated PEP screening prior to        │
+│  credit release.                                                       │
+└────────────────────────────────────────────────────────────────────────┘
 ```
 
-## Built with
+---
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## 🧩 The 3-Step Deterministic Workflow
+
+```mermaid
+flowchart LR
+    A["1. INGEST<br/>Statutory Directives (MAS 626 / FinCEN)<br/>+ Privileged Counsel Memos"] --> B["2. SEMANTIC PARSE<br/>Extract Mandatory Process Triggers<br/>& Mitigating Control Criteria"]
+    B --> C["3. AUDIT GAP REPORT<br/>% Applicability Scores<br/>+ Coverage Ratios & Vulnerability Alerts"]
+```
+
+1. **Step 1 — Dual Document Ingestion**:
+   - Ingest raw statutory directives (e.g., MAS Notice 626, FinCEN 31 CFR 1010.410) alongside internal legal counsel memos. The directive supplies the regulatory obligation; the memo provides internal institutional context.
+2. **Step 2 — Semantic Criteria Extraction**:
+   - The engine deterministically isolates criteria that make a process in-scope (*cross-border settlement, wire transfer, foreign currency, stored value*) and criteria that describe a mitigating control (*sanctions screening, velocity thresholds, PEP verification*).
+3. **Step 3 — Audit Gap & Coverage Report**:
+   - Overlays the extracted criteria directly against the institution's Process Universe to generate audit-ready applicability percentages and highlight unmitigated payment rails.
+
+---
+
+## 🏛️ The 22-Module Architecture Map
+
+GRC Nexus is designed with a 4-tier modular architecture. While our 16-week studio wedge is focused strictly on **CORE-02: Regulatory Obligations**, the broader platform scales across 22 interconnected modules:
+
+| Tier | Module Range | Key Capabilities |
+| :--- | :--- | :--- |
+| **Core Platform Services** | `CPS-01` to `CPS-05` | RBAC & access control, immutable audit trail ledger, agent session memory, data sanitization, cross-module relational mapping. |
+| **Core Modules** | `CORE-01` to `CORE-05` | Process Universe (L1-L3 hierarchies), **Regulatory Obligations (Active Wedge)**, Governance Document Library, Product Catalog, Third-Party Registry. |
+| **Orbit Operational** | `ORB-01` to `ORB-08` | Control Assessment (CD & OE), Risk Measurement & Invalidation, Audit & Assurance, Compliance Monitoring, Financial Crime Compliance (FCC). |
+| **Halo Reporting** | `HALO-01` to `HALO-04` | Scenario Analysis & Stress Testing, MAS Regulatory Returns Reporting, Executive Risk Cockpits, Board Risk Committee Packs. |
+
+---
+
+## 💼 The Consultant Wedge (Go-to-Market Strategy)
+
+Rather than fighting 18-month bank enterprise procurement cycles, GRC Nexus is positioned as a **throughput multiplier for boutique GRC consultancies and 2nd-line risk advisors**:
+- Enables advisory firms to run client gap analyses in **20 minutes** instead of 6 hours.
+- Operates locally on-premise with zero third-party cloud data leaks (satisfying strict banking secrecy and PDPA requirements).
+- Directly targets the **~350 MAS-regulated financial institutions** in Singapore.
+
+---
+
+## 💻 Local Development
+
+### Static GitHub Pages Mode (Zero Build Step)
+The repository root contains clean static assets that run immediately in any browser:
+```bash
+# Serve locally with any static web server:
+npx serve .
+# or python
+python -m http.server 8000
+```
+
+### Full React / TanStack Source Project
+The repository also includes the complete interactive Lovable source:
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Run test suite
+npm run test
+```
+
+---
+
+## 📄 Corporate Entity & Studio Affiliation
+- **Entity**: Adrish Holdings Pte Ltd (`UEN: 202631108D`)
+- **Founder**: Adrian Lin Daoqin (ex-Standard Chartered Bank, GRC Specialist)
+- **Studio Batch**: **Mamba MVP Venture Studio — Cohort 2 (2026)**
+- **License**: MIT
