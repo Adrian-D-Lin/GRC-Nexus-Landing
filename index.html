@@ -3,298 +3,481 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GRC NEXUS — Turn MAS Directives into Instant Control Mapping</title>
+  <title>GRC Nexus — Turn MAS Directives into Instant Control Mapping</title>
   <meta name="description" content="Deterministic, on-premise AI compliance architecture that ingests statutory AML directives and maps them to your processes, controls and audit gaps in minutes.">
+  <meta property="og:title" content="GRC Nexus — Turn MAS Directives into Instant Control Mapping">
+  <meta property="og:description" content="Turn 60-page MAS directives into instant process and control mapping. Built for Singapore financial institutions and payment processors.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#f8fafc',
+            foreground: '#0f172a',
+            card: '#ffffff',
+            'card-foreground': '#0f172a',
+            primary: {
+              DEFAULT: '#0f172a',
+              foreground: '#ffffff'
+            },
+            secondary: '#f1f5f9',
+            muted: {
+              DEFAULT: '#f1f5f9',
+              foreground: '#64748b'
+            },
+            accent: '#e2e8f0',
+            border: '#e2e8f0',
+            success: '#10b981',
+            warning: '#d97706',
+            ai: '#0284c7'
+          },
+          fontFamily: {
+            sans: ['Geist', 'Inter', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #f8fafc;
+      background-image: 
+        radial-gradient(1100px 520px at 100% -10%, rgba(15, 23, 42, 0.05), transparent 62%),
+        linear-gradient(to right, rgba(203, 213, 225, 0.45) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(203, 213, 225, 0.45) 1px, transparent 1px);
+      background-size: auto, 24px 24px, 24px 24px;
+      background-attachment: fixed;
+    }
+    .grid-bg {
+      background-image: 
+        linear-gradient(to right, rgba(203, 213, 225, 0.45) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(203, 213, 225, 0.45) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .glow-primary {
+      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.08), 0 16px 34px -22px rgba(15, 23, 42, 0.25);
+    }
+    .glow-success {
+      box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.25), 0 14px 30px -20px rgba(16, 185, 129, 0.35);
+    }
+  </style>
 </head>
-<body class="text-slate-900 antialiased">
+<body class="text-foreground font-sans antialiased min-h-screen">
 
-  <!-- Header / Navigation Bar -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b">
-    <div class="max-w-6xl mx-auto flex h-16 items-center justify-between gap-6 px-5">
-      <!-- Wordmark -->
+  <!-- Header -->
+  <header class="sticky top-0 z-30 border-b border-border bg-white/90 backdrop-blur">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5">
       <div class="flex items-center gap-3">
         <span class="relative flex h-2.5 w-2.5 shrink-0">
-          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60"></span>
-          <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-60"></span>
+          <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-success"></span>
         </span>
-        <span class="font-mono text-sm font-bold uppercase tracking-widest text-slate-900">GRC NEXUS</span>
-        <span class="hidden rounded border border-slate-200 bg-slate-50 px-2.5 py-1 font-mono text-[9px] uppercase tracking-wider text-slate-500 md:inline">
-          AI Governance Platform | Regulatory Obligation Mapping
-        </span>
+        <span class="font-mono text-sm font-bold uppercase tracking-widest text-foreground">GRC NEXUS</span>
       </div>
 
-      <!-- Links -->
-      <nav class="hidden items-center gap-6 text-xs font-medium text-slate-600 lg:flex">
-        <a href="#capabilities" class="transition hover:text-slate-900">Capabilities</a>
-        <a href="#wedge" class="transition hover:text-slate-900">The 16-Week Wedge</a>
-        <a href="#architecture" class="transition hover:text-slate-900">Architecture Map</a>
-        <a href="#consultancies" class="transition hover:text-slate-900">For Consultancies</a>
+      <nav class="hidden items-center gap-6 text-xs font-medium text-muted-foreground lg:flex">
+        <a href="#capabilities" class="transition hover:text-foreground">Capabilities</a>
+        <a href="#wedge" class="transition hover:text-foreground">The 16-Week Wedge</a>
+        <a href="#architecture" class="transition hover:text-foreground">Architecture Map</a>
+        <a href="#consultancies" class="transition hover:text-foreground">For Consultancies</a>
       </nav>
 
-      <!-- Action -->
-      <a href="#wedge" class="btn-navy text-xs py-2 px-3.5">
+      <a href="#wedge" class="shrink-0 rounded-md bg-primary px-4 py-2 text-xs font-bold text-primary-foreground transition hover:bg-slate-800">
         Launch Live AML Parser ⚡
       </a>
     </div>
   </header>
 
-  <!-- Hero Section (Lovable Two-Column Cockpit) -->
-  <section class="max-w-6xl mx-auto px-5 pt-16 pb-16">
-    <div class="grid gap-12 lg:grid-cols-2 items-center">
-      
-      <!-- Left Column: Copy & CTAs -->
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden border-b border-border py-16 lg:py-20">
+    <div class="relative mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
       <div>
-        <div class="inline-flex items-center gap-2 rounded border border-sky-300 bg-sky-50 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-sky-800 mb-6">
+        <span class="inline-block rounded-full border border-ai/40 bg-ai/10 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-ai">
           Built for Singapore Financial Institutions &amp; Payment Processors
-        </div>
-
-        <h1 class="text-4xl sm:text-5xl font-display font-bold tracking-tight text-slate-950 leading-[1.12]">
+        </span>
+        <h1 class="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight md:text-5xl lg:text-[3.25rem]">
           Turn 60-Page MAS Directives into Instant Process &amp; Control Mapping.
         </h1>
-
-        <p class="mt-6 text-base text-slate-600 leading-relaxed max-w-xl">
-          Stop drowning in manual regulatory checklists and brittle enterprise GRC suites. GRC Nexus uses deterministic, on-premise AI to ingest statutory directives and evaluate organizational exposure in minutes.
+        <p class="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+          Stop drowning in manual regulatory checklists and brittle enterprise GRC suites. GRC Nexus uses
+          deterministic, on-premise AI to ingest statutory directives and evaluate organizational exposure in minutes.
         </p>
-
-        <div class="mt-8 flex flex-wrap items-center gap-3">
-          <a href="#wedge" class="btn-navy">
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#wedge" class="rounded-md bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition hover:bg-slate-800">
             Test Live AML Wedge
           </a>
-          <a href="#architecture" class="btn-outline">
+          <a href="#architecture" class="rounded-md border border-border bg-card px-5 py-3 text-sm font-semibold transition hover:bg-secondary">
             View 22-Module Architecture
           </a>
         </div>
-
-        <!-- Metrics Strip -->
-        <div class="mt-14 pt-8 border-t flex flex-wrap items-center gap-8 text-xs font-mono">
+        <div class="mt-10 grid max-w-lg grid-cols-2 gap-x-8 gap-y-5 border-t border-border pt-7 sm:grid-cols-4">
           <div>
-            <div class="text-2xl font-bold font-mono text-slate-950">22</div>
-            <div class="text-[10px] text-slate-500 uppercase tracking-wider mt-0.5">Platform Modules</div>
+            <div class="font-mono text-2xl font-bold text-primary">22</div>
+            <div class="mt-1 font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Platform modules</div>
           </div>
-          <div class="w-px h-8 bg-slate-200"></div>
           <div>
-            <div class="text-2xl font-bold font-mono text-cyan-700">0.84s</div>
-            <div class="text-[10px] text-slate-500 uppercase tracking-wider mt-0.5">Inference Latency</div>
+            <div class="font-mono text-2xl font-bold text-ai">0.84s</div>
+            <div class="mt-1 font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Median evaluation</div>
           </div>
-          <div class="w-px h-8 bg-slate-200"></div>
           <div>
-            <div class="text-2xl font-bold font-mono text-slate-950">4</div>
-            <div class="text-[10px] text-slate-500 uppercase tracking-wider mt-0.5">Payment Rails</div>
+            <div class="font-mono text-2xl font-bold text-primary">4</div>
+            <div class="mt-1 font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Rails in scope</div>
           </div>
-          <div class="w-px h-8 bg-slate-200"></div>
           <div>
-            <div class="text-2xl font-bold font-mono text-emerald-600">0</div>
-            <div class="text-[10px] text-slate-500 uppercase tracking-wider mt-0.5">Cloud Data Leaks</div>
+            <div class="font-mono text-2xl font-bold text-success">0</div>
+            <div class="mt-1 font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Cloud inference calls</div>
           </div>
         </div>
       </div>
 
-      <!-- Right Column: Exact Executive Synthesis Card from Lovable -->
-      <div>
-        <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-executive">
-          
-          <div class="flex items-center justify-between border-b pb-3 mb-4">
-            <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-slate-500">EXECUTIVE SYNTHESIS</span>
-            <span class="font-mono text-[10px] text-sky-700 font-medium">EVAL #A-7731 · 0.84s</span>
-          </div>
-
-          <h2 class="text-2xl font-bold font-display text-slate-950 leading-tight">
-            These processes are <span class="text-emerald-600 font-extrabold">92% likely</span> to be subject to this regulation.
-          </h2>
-          <p class="mt-1.5 text-xs text-slate-500">
-            3 / 4 of exposed processes already have associated mitigating controls.
+      <!-- Hero Executive Synthesis Card -->
+      <div class="glow-primary overflow-hidden rounded-lg border border-border bg-card">
+        <div class="flex items-center justify-between border-b border-border px-5 py-3 bg-white">
+          <span class="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Executive Synthesis</span>
+          <span class="font-mono text-[10px] text-ai font-semibold">EVAL #A-7731 · 0.84s</span>
+        </div>
+        <div class="px-5 py-6 bg-white">
+          <p class="text-xl font-extrabold leading-snug tracking-tight md:text-2xl">
+            These processes are <span class="text-success">92% likely</span> to be subject to this regulation.
           </p>
-
-          <!-- Rows -->
-          <div class="mt-5 space-y-2.5 font-mono text-xs">
-            <div class="flex items-center justify-between rounded-md border border-slate-100 bg-slate-50/80 px-3.5 py-2.5">
-              <span class="text-sky-700 font-semibold">P-101</span>
-              <span class="text-slate-800 font-sans font-medium flex-1 px-3">VISA Settlement</span>
-              <span class="text-emerald-600 font-bold">94%</span>
+          <p class="mt-2 text-xs text-muted-foreground">3 / 4 of exposed processes already have associated mitigating controls.</p>
+          <div class="mt-5 space-y-2">
+            <div class="flex items-center gap-3 rounded-md border border-border bg-slate-50/70 px-3 py-2">
+              <span class="w-12 shrink-0 font-mono text-[10px] font-semibold text-ai">P-101</span>
+              <span class="min-w-0 flex-1 truncate text-xs font-medium">VISA Settlement</span>
+              <span class="font-mono text-[10px] font-semibold text-success">94%</span>
             </div>
-
-            <div class="flex items-center justify-between rounded-md border border-amber-200 bg-amber-50/60 px-3.5 py-2.5">
-              <span class="text-sky-700 font-semibold">P-102</span>
-              <span class="text-slate-800 font-sans font-medium flex-1 px-3">PayPal Payouts</span>
-              <span class="text-amber-600 font-bold">88%</span>
+            <div class="flex items-center gap-3 rounded-md border border-amber-200 bg-amber-50/60 px-3 py-2">
+              <span class="w-12 shrink-0 font-mono text-[10px] font-semibold text-ai">P-102</span>
+              <span class="min-w-0 flex-1 truncate text-xs font-medium">PayPal Payouts</span>
+              <span class="font-mono text-[10px] font-semibold text-warning">88%</span>
             </div>
-
-            <div class="flex items-center justify-between rounded-md border border-slate-100 bg-slate-50/80 px-3.5 py-2.5">
-              <span class="text-sky-700 font-semibold">P-103</span>
-              <span class="text-slate-800 font-sans font-medium flex-1 px-3">OCBC FAST Clearing</span>
-              <span class="text-emerald-600 font-bold">76%</span>
+            <div class="flex items-center gap-3 rounded-md border border-border bg-slate-50/70 px-3 py-2">
+              <span class="w-12 shrink-0 font-mono text-[10px] font-semibold text-ai">P-103</span>
+              <span class="min-w-0 flex-1 truncate text-xs font-medium">OCBC FAST Clearing</span>
+              <span class="font-mono text-[10px] font-semibold text-success">76%</span>
             </div>
           </div>
-
-          <!-- Alert Callout -->
-          <div class="mt-5 rounded-md border border-amber-200 bg-amber-50 p-3 text-[11px] text-amber-900 leading-relaxed">
-            ⚠️ <b>P-102 (Merchant Wallet Payouts / PayPal)</b> lacks mandatory automated PEP screening prior to credit release.
-          </div>
-
-          <div class="mt-4 pt-3 border-t flex items-center justify-between text-[10px] font-mono text-slate-400">
-            <span>DEMONSTRATION DATASET</span>
-            <span>CONFIDENCE LEVEL: HIGH</span>
-          </div>
-
+        </div>
+        <div class="border-t border-amber-200 bg-amber-50 px-5 py-3 text-xs leading-relaxed text-amber-900">
+          ⚠️ <span class="font-semibold">P-102</span> (Merchant Wallet Payouts / PayPal) lacks mandatory automated PEP screening prior to credit release.
+        </div>
+        <div class="border-t border-border bg-slate-50 px-5 py-2 font-mono text-[10px] uppercase tracking-wider text-muted-foreground flex justify-between">
+          <span>Demonstration dataset</span>
+          <span>Deterministic Scoring</span>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Interactive Wedge Explainer Section -->
-  <section id="wedge" class="border-t bg-slate-50/60 py-16">
-    <div class="max-w-6xl mx-auto px-5">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="font-mono text-[10px] font-bold text-sky-700 uppercase tracking-widest">The 16-Week Studio Wedge</span>
-        <h2 class="text-3xl font-display font-bold text-slate-950 mt-1">The 3-Step Deterministic Workflow</h2>
-        <p class="mt-2 text-sm text-slate-600">
-          How GRC Nexus transforms dense statutory text into audit defense.
-        </p>
+  <!-- 01 / Capabilities Section -->
+  <section id="capabilities" class="scroll-mt-20 border-b border-border px-5 py-20 bg-white">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl">
+        <div class="font-mono text-[10px] uppercase tracking-widest text-primary font-bold">01 / Capabilities</div>
+        <h2 class="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">The 3-Step Deterministic Workflow</h2>
+        <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Three moves, zero configuration project in front of them.</p>
       </div>
 
-      <div class="grid gap-6 md:grid-cols-3">
-        <!-- Step 1 -->
-        <div class="rounded-lg border bg-white p-6 shadow-card">
-          <div class="font-mono text-xs font-bold text-sky-700 mb-2">01 · INGEST</div>
-          <h3 class="text-base font-bold text-slate-900">Directives &amp; Counsel Memos</h3>
-          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-            Drop MAS Notice 626 or FinCEN directives in one pane and your privileged counsel memo in the other. No pre-tagging required.
+      <div class="mt-10 grid gap-4 md:grid-cols-3">
+        <div class="rounded-md border border-border bg-card p-5 hover:border-primary/40 transition">
+          <div class="flex items-center gap-2 font-mono text-[10px]">
+            <span class="text-primary font-bold">01</span>
+            <span class="font-bold text-foreground">Ingest</span>
+          </div>
+          <div class="mt-2 text-xs font-semibold text-foreground">Statutory directives and counsel memos, side by side</div>
+          <p class="mt-2 text-xs leading-relaxed text-muted-foreground">
+            Drop MAS Notice 626 or FinCEN 31 CFR 1010.410 in one pane and your privileged counsel memo in the other. No templates, no taxonomy project first.
           </p>
-          <div class="mt-4 flex flex-wrap gap-1">
-            <span class="rounded bg-slate-100 px-2 py-0.5 font-mono text-[10px] text-slate-600">MAS Notice 626</span>
-            <span class="rounded bg-slate-100 px-2 py-0.5 font-mono text-[10px] text-slate-600">Counsel Memos</span>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="rounded bg-slate-100 px-2 py-0.5 font-mono text-[10px] text-muted-foreground">MAS Notice 626</span>
+            <span class="rounded bg-slate-100 px-2 py-0.5 font-mono text-[10px] text-muted-foreground">Counsel Memos</span>
           </div>
         </div>
 
-        <!-- Step 2 -->
-        <div class="rounded-lg border bg-white p-6 shadow-card">
-          <div class="font-mono text-xs font-bold text-sky-700 mb-2">02 · EXTRACT</div>
-          <h3 class="text-base font-bold text-slate-900">Semantic Criteria Parse</h3>
-          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+        <div class="rounded-md border border-border bg-card p-5 hover:border-primary/40 transition">
+          <div class="flex items-center gap-2 font-mono text-[10px]">
+            <span class="text-primary font-bold">02</span>
+            <span class="font-bold text-foreground">Semantic Criteria Extraction</span>
+          </div>
+          <div class="mt-2 text-xs font-semibold text-foreground">Mandatory process criteria and control triggers, separated</div>
+          <p class="mt-2 text-xs leading-relaxed text-muted-foreground">
             The engine pulls the criteria that make a process in-scope (cross-border, stored value) and control triggers (velocity checks, PEP thresholds).
           </p>
-          <div class="mt-4 flex flex-wrap gap-1">
-            <span class="rounded bg-sky-50 px-2 py-0.5 font-mono text-[10px] text-sky-800">Process Triggers</span>
-            <span class="rounded bg-emerald-50 px-2 py-0.5 font-mono text-[10px] text-emerald-800">Control Triggers</span>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="rounded bg-ai/10 px-2 py-0.5 font-mono text-[10px] text-ai">Process Triggers</span>
+            <span class="rounded bg-ai/10 px-2 py-0.5 font-mono text-[10px] text-ai">Control Triggers</span>
           </div>
         </div>
 
-        <!-- Step 3 -->
-        <div class="rounded-lg border bg-white p-6 shadow-card">
-          <div class="font-mono text-xs font-bold text-sky-700 mb-2">03 · REPORT</div>
-          <h3 class="text-base font-bold text-slate-900">Audit Gap &amp; % Likelihood</h3>
-          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-            Instant % likelihood scoring, coverage ratio across exposed payment rails, and direct flags on unmitigated vulnerabilities.
+        <div class="rounded-md border border-border bg-card p-5 hover:border-primary/40 transition">
+          <div class="flex items-center gap-2 font-mono text-[10px]">
+            <span class="text-primary font-bold">03</span>
+            <span class="font-bold text-foreground">Audit Gap Report</span>
+          </div>
+          <div class="mt-2 text-xs font-semibold text-foreground">Likelihood of applicability plus unmitigated rails flagged</div>
+          <p class="mt-2 text-xs leading-relaxed text-muted-foreground">
+            Percentage likelihood that the directive bites, coverage ratio across exposed rails, and direct flags on unmitigated vulnerabilities.
           </p>
-          <div class="mt-4 flex flex-wrap gap-1">
-            <span class="rounded bg-emerald-50 px-2 py-0.5 font-mono text-[10px] text-emerald-800">92% Coverage</span>
-            <span class="rounded bg-amber-50 px-2 py-0.5 font-mono text-[10px] text-amber-800">Gap Flags</span>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="rounded bg-emerald-50 px-2 py-0.5 font-mono text-[10px] text-emerald-700">92% Coverage</span>
+            <span class="rounded bg-amber-50 px-2 py-0.5 font-mono text-[10px] text-warning">Gap Flags</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-md border border-border bg-card p-5">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-ai">Feature</div>
+          <div class="mt-2 text-sm font-bold">Dual Document Ingestion</div>
+          <p class="mt-2 text-xs leading-relaxed text-muted-foreground">Regulatory text and legal interpretation are evaluated together, not sequentially.</p>
+        </div>
+        <div class="rounded-md border border-border bg-card p-5">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-primary">Feature</div>
+          <div class="mt-2 text-sm font-bold">Deterministic Evaluation</div>
+          <p class="mt-2 text-xs leading-relaxed text-muted-foreground">The same directive and memo produce the exact same readout every time.</p>
+        </div>
+        <div class="rounded-md border border-border bg-card p-5">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-ai">Feature</div>
+          <div class="mt-2 text-sm font-bold">Alignment Matrices</div>
+          <p class="mt-2 text-xs leading-relaxed text-muted-foreground">Every exposed process and candidate control scored on one unified screen.</p>
+        </div>
+        <div class="rounded-md border border-border bg-card p-5">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-warning">Feature</div>
+          <div class="mt-2 text-sm font-bold">Evidence-Grade Output</div>
+          <p class="mt-2 text-xs leading-relaxed text-muted-foreground">Triggers, citations and gap flags come out as an immutable, reviewable record.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 / The 16-Week Wedge -->
+  <section id="wedge" class="scroll-mt-20 border-b border-border bg-secondary px-5 py-20">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl">
+        <div class="font-mono text-[10px] uppercase tracking-widest text-primary font-bold">02 / The 16-Week Wedge</div>
+        <h2 class="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">One domain, four payment rails, one working wedge.</h2>
+        <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
+          We do not start with a company-wide rollout. The wedge is the Anti-Money Laundering domain across the rails that actually move money — VISA settlement, PayPal merchant wallets and OCBC FAST clearing — proven end to end before anything else is added.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-4 md:grid-cols-3">
+        <div class="rounded-md border border-border bg-card p-5">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-primary font-bold">Weeks 1–4</div>
+          <div class="mt-2 text-sm font-bold">Ingest and map</div>
+          <p class="mt-2 text-xs leading-relaxed text-muted-foreground">Statutory directives, counsel memos and the institution's process taxonomy loaded into the platform.</p>
+        </div>
+        <div class="rounded-md border border-border bg-card p-5">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-primary font-bold">Weeks 5–10</div>
+          <div class="mt-2 text-sm font-bold">Evaluate and flag</div>
+          <p class="mt-2 text-xs leading-relaxed text-muted-foreground">Semantic evaluation run across the payment rails in scope, with unmitigated controls surfaced as gaps.</p>
+        </div>
+        <div class="rounded-md border border-border bg-card p-5">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-primary font-bold">Weeks 11–16</div>
+          <div class="mt-2 text-sm font-bold">Remediate and hand over</div>
+          <p class="mt-2 text-xs leading-relaxed text-muted-foreground">Gap remediation pack, board reporting and the evidence trail a regulator can be walked through.</p>
+        </div>
+      </div>
+
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="rounded border border-border bg-card px-3 py-1.5 font-mono text-[10px] text-muted-foreground">VISA Settlement</span>
+        <span class="rounded border border-border bg-card px-3 py-1.5 font-mono text-[10px] text-muted-foreground">PayPal Payouts</span>
+        <span class="rounded border border-border bg-card px-3 py-1.5 font-mono text-[10px] text-muted-foreground">OCBC FAST Clearing</span>
+        <span class="rounded border border-border bg-card px-3 py-1.5 font-mono text-[10px] text-muted-foreground">Corporate Payroll</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 / Architecture Map -->
+  <section id="architecture" class="scroll-mt-20 border-b border-border px-5 py-20 bg-white">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl">
+        <div class="font-mono text-[10px] uppercase tracking-widest text-primary font-bold">03 / Architecture Map</div>
+        <h2 class="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">22 modules. One obligation engine at the centre.</h2>
+        <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
+          The wedge sits inside CORE-02: Regulatory Obligations. Every other module is a surface the same evidence already feeds — no re-keying, no parallel spreadsheet.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div class="rounded-md border border-border bg-card">
+          <div class="flex items-center justify-between border-b border-border px-4 py-3 bg-slate-50/50">
+            <span class="text-xs font-bold text-foreground">Core Platform Services</span>
+            <span class="font-mono text-[10px] text-muted-foreground">5</span>
+          </div>
+          <div class="space-y-1.5 p-3 font-mono text-[11px]">
+            <div class="rounded border border-border bg-secondary p-2">PLAT-01: Identity &amp; Access</div>
+            <div class="rounded border border-border bg-secondary p-2">PLAT-02: Evidence Vault</div>
+            <div class="rounded border border-border bg-secondary p-2">PLAT-03: Semantic AI Engine</div>
+            <div class="rounded border border-border bg-secondary p-2">PLAT-04: Audit Trail Ledger</div>
+            <div class="rounded border border-border bg-secondary p-2">PLAT-05: Integration Hub</div>
+          </div>
+        </div>
+
+        <div class="rounded-md border border-border bg-card">
+          <div class="flex items-center justify-between border-b border-border px-4 py-3 bg-slate-50/50">
+            <span class="text-xs font-bold text-foreground">Core Modules</span>
+            <span class="font-mono text-[10px] text-muted-foreground">6</span>
+          </div>
+          <div class="space-y-1.5 p-3 font-mono text-[11px]">
+            <div class="rounded border border-border bg-secondary p-2">CORE-01: Policy Management</div>
+            <div class="rounded border border-success/40 bg-emerald-50/40 p-2 glow-success">
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-emerald-800">CORE-02: Obligations</span>
+                <span class="rounded bg-success px-1.5 py-0.2 font-mono text-[8px] font-bold text-white">ACTIVE WEDGE</span>
+              </div>
+            </div>
+            <div class="rounded border border-border bg-secondary p-2">CORE-03: Risk Register</div>
+            <div class="rounded border border-border bg-secondary p-2">CORE-04: Control Library</div>
+            <div class="rounded border border-border bg-secondary p-2">CORE-05: Issues &amp; Actions</div>
+            <div class="rounded border border-border bg-secondary p-2">CORE-06: Process Taxonomy</div>
+          </div>
+        </div>
+
+        <div class="rounded-md border border-border bg-card">
+          <div class="flex items-center justify-between border-b border-border px-4 py-3 bg-slate-50/50">
+            <span class="text-xs font-bold text-foreground">Orbit Modules</span>
+            <span class="font-mono text-[10px] text-muted-foreground">6</span>
+          </div>
+          <div class="space-y-1.5 p-3 font-mono text-[11px]">
+            <div class="rounded border border-border bg-secondary p-2">ORB-01: Third-Party Risk</div>
+            <div class="rounded border border-border bg-secondary p-2">ORB-02: Internal Audit</div>
+            <div class="rounded border border-border bg-secondary p-2">ORB-03: Incident Management</div>
+            <div class="rounded border border-border bg-secondary p-2">ORB-04: Regulatory Change</div>
+            <div class="rounded border border-border bg-secondary p-2">ORB-05: Model Risk</div>
+            <div class="rounded border border-border bg-secondary p-2">ORB-06: Business Continuity</div>
+          </div>
+        </div>
+
+        <div class="rounded-md border border-border bg-card">
+          <div class="flex items-center justify-between border-b border-border px-4 py-3 bg-slate-50/50">
+            <span class="text-xs font-bold text-foreground">Halo Modules</span>
+            <span class="font-mono text-[10px] text-muted-foreground">5</span>
+          </div>
+          <div class="space-y-1.5 p-3 font-mono text-[11px]">
+            <div class="rounded border border-border bg-secondary p-2">HALO-01: Board Reporting</div>
+            <div class="rounded border border-border bg-secondary p-2">HALO-02: Regulator Portal</div>
+            <div class="rounded border border-border bg-secondary p-2">HALO-03: ESG Disclosure</div>
+            <div class="rounded border border-border bg-secondary p-2">HALO-04: Benchmark Analytics</div>
+            <div class="rounded border border-border bg-secondary p-2">HALO-05: Horizon Scanning</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 22-Module Architecture Map Section -->
-  <section id="architecture" class="py-16 border-t bg-white">
-    <div class="max-w-6xl mx-auto px-5">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest">Enterprise Architecture</span>
-        <h2 class="text-3xl font-display font-bold text-slate-950 mt-1">The Complete 22-Module Ecosystem</h2>
-        <p class="mt-2 text-sm text-slate-600">
-          Engineered for full institutional scale across Core, Orbit, and Halo tiers.
+  <!-- 04 / For Consultancies -->
+  <section id="consultancies" class="scroll-mt-20 border-b border-border bg-secondary px-5 py-20">
+    <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_.85fr] lg:items-center">
+      <div>
+        <div class="font-mono text-[10px] uppercase tracking-widest text-primary font-bold">04 / For Consultancies</div>
+        <h2 class="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">Empowering Boutique GRC Consultancies &amp; 2nd-Line Risk Teams.</h2>
+        <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
+          Advisory firms sell judgement, not data entry. GRC Nexus multiplies audit throughput roughly tenfold on the mechanical half of an engagement — reading the directive, listing the exposed processes, checking what stands behind them — without a multi-year bank IT integration cycle in the way.
         </p>
+        <div class="mt-8 grid gap-3 sm:grid-cols-3">
+          <div class="rounded-md border border-border bg-card px-4 py-3">
+            <div class="font-mono text-2xl font-bold text-primary">10x</div>
+            <div class="mt-1 font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Audit throughput</div>
+          </div>
+          <div class="rounded-md border border-border bg-card px-4 py-3">
+            <div class="font-mono text-2xl font-bold text-primary">0</div>
+            <div class="mt-1 font-mono text-[9px] uppercase tracking-widest text-muted-foreground">IT integration cycles</div>
+          </div>
+          <div class="rounded-md border border-border bg-card px-4 py-3">
+            <div class="font-mono text-2xl font-bold text-primary">1</div>
+            <div class="mt-1 font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Evidence pack / engagement</div>
+          </div>
+        </div>
       </div>
 
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 text-xs">
-        <!-- Core Platform Services -->
-        <div class="rounded-lg border bg-slate-50/60 p-4">
-          <div class="font-semibold text-slate-900 border-b pb-2 mb-3">Core Platform Services</div>
-          <ul class="space-y-2 text-slate-600 font-mono text-[11px]">
-            <li>PLAT-01: Identity &amp; Access</li>
-            <li>PLAT-02: Evidence Vault</li>
-            <li>PLAT-03: Semantic AI Engine</li>
-            <li>PLAT-04: Audit Trail Ledger</li>
-            <li>PLAT-05: Integration Hub</li>
-          </ul>
-        </div>
+      <div class="rounded-lg border border-border bg-card p-6 shadow-sm">
+        <div class="font-mono text-[10px] uppercase tracking-widest text-ai font-bold">What a partner delivers</div>
+        <ul class="mt-4 space-y-3 text-sm leading-relaxed text-foreground">
+          <li class="flex gap-3">
+            <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"></span>
+            <span>A directive-to-process map the client's own process owners can dispute line by line.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"></span>
+            <span>Coverage ratios per payment rail, with the unmitigated ones named and dated.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"></span>
+            <span>A preserved audit trail showing which reading of the directive produced which flag.</span>
+          </li>
+        </ul>
+        <a href="#wedge" class="mt-6 inline-block rounded-md border border-border bg-secondary px-4 py-2.5 text-xs font-semibold transition hover:bg-card">
+          Open the engine and see the output
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <!-- Core Modules -->
-        <div class="rounded-lg border-2 border-emerald-400 bg-emerald-50/20 p-4 shadow-sm">
-          <div class="flex items-center justify-between border-b border-emerald-200 pb-2 mb-3">
-            <span class="font-semibold text-emerald-950">Core Modules</span>
-            <span class="rounded bg-emerald-600 px-1.5 py-0.2 font-mono text-[9px] font-bold text-white">ACTIVE WEDGE</span>
-          </div>
-          <ul class="space-y-2 font-mono text-[11px]">
-            <li class="text-slate-600">CORE-01: Policy Management</li>
-            <li class="font-bold text-emerald-700">CORE-02: Regulatory Obligations</li>
-            <li class="text-slate-600">CORE-03: Risk Register</li>
-            <li class="text-slate-600">CORE-04: Control Library</li>
-            <li class="text-slate-600">CORE-05: Issues &amp; Actions</li>
-            <li class="text-slate-600">CORE-06: Process Taxonomy</li>
-          </ul>
-        </div>
+  <!-- 05 / The Banking Advantage -->
+  <section class="border-b border-border px-5 py-20 bg-white">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl">
+        <div class="font-mono text-[10px] uppercase tracking-widest text-primary font-bold">05 / The Banking Advantage</div>
+        <h2 class="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">Technical &amp; security highlights.</h2>
+      </div>
 
-        <!-- Orbit Modules -->
-        <div class="rounded-lg border bg-slate-50/60 p-4">
-          <div class="font-semibold text-slate-900 border-b pb-2 mb-3">Orbit Modules</div>
-          <ul class="space-y-2 text-slate-600 font-mono text-[11px]">
-            <li>ORB-01: Third-Party Risk</li>
-            <li>ORB-02: Internal Audit</li>
-            <li>ORB-03: Incident Management</li>
-            <li>ORB-04: Regulatory Change</li>
-            <li>ORB-05: Model Risk</li>
-            <li>ORB-06: Business Continuity</li>
-          </ul>
+      <div class="mt-10 grid gap-4 md:grid-cols-2">
+        <div class="rounded-md border border-ai/40 bg-card p-6">
+          <div class="text-sm font-bold text-foreground">Zero Third-Party Cloud Data Leakage</div>
+          <p class="mt-3 text-xs leading-relaxed text-muted-foreground">
+            Model execution stays on the workstation or inside your own perimeter. Directive text, counsel memos and process data never leave for a hosted inference endpoint.
+          </p>
         </div>
-
-        <!-- Halo Modules -->
-        <div class="rounded-lg border bg-slate-50/60 p-4">
-          <div class="font-semibold text-slate-900 border-b pb-2 mb-3">Halo Modules</div>
-          <ul class="space-y-2 text-slate-600 font-mono text-[11px]">
-            <li>HALO-01: Board Reporting</li>
-            <li>HALO-02: Regulator Portal</li>
-            <li>HALO-03: ESG Disclosure</li>
-            <li>HALO-04: Benchmark Analytics</li>
-            <li>HALO-05: Horizon Scanning</li>
-          </ul>
+        <div class="rounded-md border border-amber-300 bg-card p-6">
+          <div class="text-sm font-bold text-foreground">Audit-Trail Immutability &amp; Conflict Preservation</div>
+          <p class="mt-3 text-xs leading-relaxed text-muted-foreground">
+            The engine never smooths over an audit gap to produce a tidier answer. Where two readings of a directive conflict, both are preserved and attributed rather than averaged away.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Consultancy Wedge Section -->
-  <section id="consultancies" class="py-16 border-t bg-slate-900 text-white">
-    <div class="max-w-6xl mx-auto px-5">
-      <div class="max-w-3xl">
-        <span class="font-mono text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Channel Distribution</span>
-        <h2 class="text-3xl font-display font-bold mt-2">Built for Boutique GRC Consultancies</h2>
-        <p class="mt-4 text-sm text-slate-300 leading-relaxed">
-          Bypass 18-month bank IT procurement cycles. GRC Nexus licenses directly to boutique compliance advisory firms, multiplying client gap audit throughput by 10x without ever exposing the raw tooling to client IT departments.
-        </p>
-        <div class="mt-6 flex items-center gap-4">
-          <a href="#wedge" class="btn-navy bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold">
-            Explore Advisory Partner Program
-          </a>
-        </div>
+  <!-- Closing Section -->
+  <section class="relative overflow-hidden px-5 py-20 bg-white">
+    <div class="grid-bg absolute inset-0 opacity-40"></div>
+    <div class="relative mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl text-foreground">
+        Run your first obligation review in the next ten minutes.
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+        The sample MAS Notice 626 directive and counsel memo are already loaded. Press evaluate and read the gap report.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="#wedge" class="rounded-md bg-primary px-6 py-3 text-sm font-bold text-primary-foreground transition hover:bg-slate-800">
+          Launch Live AML Parser ⚡
+        </a>
+        <a href="#architecture" class="rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold transition hover:bg-secondary">
+          View Architecture Map
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="border-t bg-white py-10 px-5">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
-      <div>
-        <span class="font-bold text-slate-900">GRC NEXUS</span> · Adrish Holdings Pte Ltd (UEN: 202631108D)
+  <footer class="border-t border-border bg-white px-5 py-8">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 md:flex-row md:items-center md:justify-between text-xs text-muted-foreground">
+      <div class="flex items-center gap-3">
+        <span class="h-2 w-2 rounded-full bg-primary"></span>
+        <span class="font-mono text-xs font-bold uppercase tracking-widest text-foreground">GRC NEXUS</span>
+        <span>·</span>
+        <span>Adrish Holdings Pte Ltd (UEN: 202631108D)</span>
       </div>
-      <div>
-        Enterprise Governance &amp; Regulatory Technology
-      </div>
+      <p class="font-mono text-[10px]">
+        GRC Nexus © 2026. Enterprise Governance &amp; Regulatory Technology.
+      </p>
     </div>
   </footer>
 

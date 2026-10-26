@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "GRC Nexus — Turn MAS Directives into Instant Control Mapping" },
       { name: "description", content: "Deterministic, on-premise AI that ingests statutory AML directives and maps them to your processes, controls and audit gaps in minutes." },
-      { property: "og:title", content: "GRC Nexus — AI Governance Platform | MAS Regulated" },
+      { property: "og:title", content: "GRC Nexus — Turn MAS Directives into Instant Control Mapping" },
       { property: "og:description", content: "Turn 60-page MAS directives into instant process and control mapping. Built for Singapore financial institutions and payment processors." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -84,9 +84,6 @@ function Header() {
             <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
           </span>
           <span className="font-mono text-sm font-bold uppercase tracking-widest">GRC NEXUS</span>
-          <span className="hidden rounded border border-border px-2 py-1 font-mono text-[9px] uppercase tracking-wider text-muted-foreground md:inline">
-            AI Governance Platform | MAS Regulated
-          </span>
         </div>
         <nav className="hidden items-center gap-6 text-xs font-medium text-muted-foreground lg:flex">
           {[["#capabilities", "Capabilities"], ["#wedge", "The 16-Week Wedge"], ["#architecture", "Architecture Map"], ["#consultancies", "For Consultancies"]].map(([href, label]) => (
