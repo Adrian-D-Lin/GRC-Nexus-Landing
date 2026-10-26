@@ -7,7 +7,7 @@
   <meta name="description" content="Deterministic, on-premise AI compliance architecture that ingests statutory AML directives and maps them to your processes, controls and audit gaps in minutes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #F8FAFC;
@@ -55,14 +55,13 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Container */
     .container {
       max-width: 1160px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* Header */
+    /* Header (No emerald pulse) */
     header {
       position: sticky;
       top: 0;
@@ -70,6 +69,10 @@
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.2s ease;
+    }
+    header.scrolled {
+      box-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.08);
     }
     .header-inner {
       display: flex;
@@ -77,38 +80,14 @@
       justify-content: space-between;
       height: 64px;
     }
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .pulse-dot {
-      width: 10px;
-      height: 10px;
-      background: var(--emerald);
-      border-radius: 50%;
-      position: relative;
-    }
-    .pulse-dot::after {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      background: var(--emerald);
-      opacity: 0.4;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(0.9); opacity: 0.6; }
-      70% { transform: scale(1.6); opacity: 0; }
-      100% { transform: scale(0.9); opacity: 0; }
-    }
     .wordmark {
-      font-size: 14px;
+      font-family: 'Geist', sans-serif;
+      font-size: 15px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--navy);
+      user-select: none;
     }
     nav {
       display: flex;
@@ -133,16 +112,17 @@
       padding: 8px 16px;
       border-radius: 6px;
       text-decoration: none;
-      transition: background 0.15s;
+      transition: all 0.15s;
       white-space: nowrap;
     }
     .btn-navy-sm:hover {
       background: var(--navy-hover);
+      transform: translateY(-1px);
     }
 
     /* Hero Section */
     .hero {
-      padding: 72px 0 80px 0;
+      padding: 72px 0 64px 0;
       border-bottom: 1px solid var(--border);
     }
     .hero-grid {
@@ -200,6 +180,7 @@
     .btn-primary:hover {
       background: var(--navy-hover);
       transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
     }
     .btn-secondary {
       background: #FFFFFF;
@@ -214,6 +195,7 @@
     }
     .btn-secondary:hover {
       background: #F1F5F9;
+      transform: translateY(-1px);
     }
 
     /* Metrics Strip */
@@ -226,7 +208,7 @@
     }
     .metric-item .val {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
       color: var(--navy);
     }
@@ -239,6 +221,62 @@
       margin-top: 4px;
     }
 
+    /* Marquee Ticker */
+    .ticker-wrap {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background: rgba(241, 245, 249, 0.6);
+      padding: 12px 0;
+    }
+    .ticker-move {
+      display: flex;
+      width: max-content;
+      animation: ticker 28s linear infinite;
+    }
+    .ticker-move:hover {
+      animation-play-state: paused;
+    }
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding-right: 32px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--slate-muted);
+      white-space: nowrap;
+    }
+    .ticker-item .diamond {
+      color: var(--navy);
+      opacity: 0.4;
+      font-size: 9px;
+    }
+    .ticker-fade-l {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 64px;
+      background: linear-gradient(to right, var(--bg), transparent);
+      pointer-events: none;
+    }
+    .ticker-fade-r {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 64px;
+      background: linear-gradient(to left, var(--bg), transparent);
+      pointer-events: none;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
     /* Executive Synthesis Card */
     .exec-card {
       background: #FFFFFF;
@@ -246,6 +284,10 @@
       border-radius: 12px;
       box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.04);
       overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .exec-card:hover {
+      box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.12);
     }
     .exec-header {
       display: flex;
@@ -264,10 +306,29 @@
       color: var(--slate-muted);
     }
     .exec-header .eval-id {
+      display: flex;
+      align-items: center;
+      gap: 6px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
       font-weight: 600;
       color: var(--blue-ai);
+    }
+    .exec-header .pulse-blue {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue-ai);
+      position: relative;
+    }
+    .exec-header .pulse-blue::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: var(--blue-ai);
+      opacity: 0.4;
+      animation: pulse 2s infinite;
     }
     .exec-body {
       padding: 24px;
@@ -282,10 +343,25 @@
     .highlight-green {
       color: var(--emerald);
     }
+    /* Animated Coverage Progress Bar */
+    .progress-bar-bg {
+      margin-top: 12px;
+      height: 6px;
+      background: #F1F5F9;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--emerald);
+      border-radius: 9999px;
+      transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
     .exec-sub {
       font-size: 13px;
       color: var(--slate-muted);
-      margin-top: 6px;
+      margin-top: 8px;
       margin-bottom: 20px;
     }
     .exec-rows {
@@ -302,6 +378,10 @@
       border: 1px solid var(--border);
       background: #F8FAFC;
       font-size: 13px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .exec-row:hover {
+      transform: translateX(2px);
     }
     .exec-row.gap-row {
       background: var(--amber-bg);
@@ -387,23 +467,41 @@
       margin-bottom: 40px;
     }
 
-    /* Workflow Cards */
+    /* Scroll Reveal Motion */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Workflow Cards & Interactive Tab Action */
     .cards-grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
     .wf-card {
       background: #FFFFFF;
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 24px;
-      transition: all 0.2s;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+      position: relative;
     }
     .wf-card:hover {
+      transform: translateY(-3px);
       border-color: var(--navy);
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    }
+    .wf-card.active {
+      border: 2px solid var(--navy);
+      background: #F8FAFC;
     }
     .wf-card-header {
       display: flex;
@@ -463,6 +561,30 @@
       border: 1px solid var(--amber-border);
     }
 
+    /* Active Step Detail Callout Banner */
+    .step-detail-banner {
+      background: #F1F5F9;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      transition: opacity 0.3s ease;
+    }
+    .step-detail-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue-ai);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .step-detail-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--navy);
+    }
+
     /* Feature Grid */
     .feature-grid {
       display: grid;
@@ -475,6 +597,12 @@
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 20px;
+      transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .feat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(15, 23, 42, 0.05);
+      border-color: var(--navy);
     }
     .feat-card .tag-lbl {
       font-family: 'JetBrains Mono', monospace;
@@ -509,6 +637,10 @@
       border: 1px solid var(--border);
       border-radius: 8px;
       overflow: hidden;
+      transition: all 0.2s;
+    }
+    .arch-col:hover {
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
     }
     .arch-header {
       display: flex;
@@ -542,6 +674,11 @@
       border: 1px solid var(--border);
       border-radius: 6px;
       color: var(--slate-body);
+      transition: all 0.15s;
+    }
+    .arch-item:hover {
+      background: #F1F5F9;
+      transform: translateX(2px);
     }
     .arch-item.active-wedge {
       background: var(--emerald-bg);
@@ -589,6 +726,11 @@
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .m-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.05);
     }
     .m-box .v {
       font-family: 'JetBrains Mono', monospace;
@@ -610,6 +752,10 @@
       border-radius: 12px;
       padding: 28px;
       box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+      transition: all 0.2s;
+    }
+    .partner-card:hover {
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     }
     .partner-card .p-tag {
       font-family: 'JetBrains Mono', monospace;
@@ -656,6 +802,7 @@
     }
     .btn-partner:hover {
       background: #E2E8F0;
+      transform: translateY(-1px);
     }
 
     /* Security Section */
@@ -668,6 +815,11 @@
       background: #FFFFFF;
       border-radius: 8px;
       padding: 28px;
+      transition: all 0.2s;
+    }
+    .sec-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
     }
     .sec-card.blue {
       border: 1px solid var(--blue-ai-border);
@@ -756,13 +908,10 @@
 </head>
 <body>
 
-  <!-- Sticky Header -->
-  <header>
+  <!-- Sticky Header (Clean wordmark, no emerald pulse) -->
+  <header id="main-header">
     <div class="container header-inner">
-      <div class="logo-area">
-        <div class="pulse-dot"></div>
-        <div class="wordmark">GRC NEXUS</div>
-      </div>
+      <div class="wordmark">GRC NEXUS</div>
       <nav>
         <a href="#capabilities">Capabilities</a>
         <a href="#wedge">The 16-Week Wedge</a>
@@ -787,17 +936,17 @@
           <a href="#wedge" class="btn-primary">Test Live AML Wedge</a>
           <a href="#architecture" class="btn-secondary">View 22-Module Architecture</a>
         </div>
-        <div class="metrics-strip">
+        <div class="metrics-strip" id="metrics-strip">
           <div class="metric-item">
-            <div class="val">22</div>
+            <div class="val counter" data-target="22" data-decimals="0">0</div>
             <div class="label">Platform modules</div>
           </div>
           <div class="metric-item">
-            <div class="val" style="color: var(--blue-ai);">0.84s</div>
+            <div class="val counter" data-target="0.84" data-decimals="2" data-suffix="s" style="color: var(--blue-ai);">0.00s</div>
             <div class="label">Median evaluation</div>
           </div>
           <div class="metric-item">
-            <div class="val">4</div>
+            <div class="val counter" data-target="4" data-decimals="0">0</div>
             <div class="label">Rails in scope</div>
           </div>
           <div class="metric-item">
@@ -807,28 +956,34 @@
         </div>
       </div>
 
-      <!-- Hero Executive Synthesis Card -->
-      <div class="exec-card">
+      <!-- Hero Executive Synthesis Card with Animated Progress and Stagger -->
+      <div class="exec-card" id="exec-synthesis-card">
         <div class="exec-header">
           <span class="title">Executive Synthesis</span>
-          <span class="eval-id">EVAL #A-7731 · 0.84s</span>
+          <span class="eval-id">
+            <span class="pulse-blue"></span>
+            EVAL #A-7731 · 0.84s
+          </span>
         </div>
         <div class="exec-body">
           <h2>These processes are <span class="highlight-green">92% likely</span> to be subject to this regulation.</h2>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="coverage-progress-bar"></div>
+          </div>
           <div class="exec-sub">3 / 4 of exposed processes already have associated mitigating controls.</div>
           
           <div class="exec-rows">
-            <div class="exec-row">
+            <div class="exec-row" style="transition-delay: 200ms;">
               <span class="code">P-101</span>
               <span class="name">VISA Settlement</span>
               <span class="pct">94%</span>
             </div>
-            <div class="exec-row gap-row">
+            <div class="exec-row gap-row" style="transition-delay: 350ms;">
               <span class="code">P-102</span>
               <span class="name">PayPal Payouts</span>
               <span class="pct">88%</span>
             </div>
-            <div class="exec-row">
+            <div class="exec-row" style="transition-delay: 500ms;">
               <span class="code">P-103</span>
               <span class="name">OCBC FAST Clearing</span>
               <span class="pct">76%</span>
@@ -847,22 +1002,47 @@
     </div>
   </section>
 
-  <!-- Capabilities Section -->
+  <!-- Marquee Ticker Banner -->
+  <div class="ticker-wrap">
+    <div class="ticker-move">
+      <div class="ticker-item">MAS Notice 626 <span class="diamond">◆</span></div>
+      <div class="ticker-item">FinCEN 31 CFR 1010.410 <span class="diamond">◆</span></div>
+      <div class="ticker-item">SGD 1,000 threshold <span class="diamond">◆</span></div>
+      <div class="ticker-item">PEP screening <span class="diamond">◆</span></div>
+      <div class="ticker-item">Sanctions lists <span class="diamond">◆</span></div>
+      <div class="ticker-item">Velocity checks <span class="diamond">◆</span></div>
+      <div class="ticker-item">Cross-border settlement <span class="diamond">◆</span></div>
+      <div class="ticker-item">Stored value facilities <span class="diamond">◆</span></div>
+      <!-- Loop duplicate for seamless continuous animation -->
+      <div class="ticker-item">MAS Notice 626 <span class="diamond">◆</span></div>
+      <div class="ticker-item">FinCEN 31 CFR 1010.410 <span class="diamond">◆</span></div>
+      <div class="ticker-item">SGD 1,000 threshold <span class="diamond">◆</span></div>
+      <div class="ticker-item">PEP screening <span class="diamond">◆</span></div>
+      <div class="ticker-item">Sanctions lists <span class="diamond">◆</span></div>
+      <div class="ticker-item">Velocity checks <span class="diamond">◆</span></div>
+      <div class="ticker-item">Cross-border settlement <span class="diamond">◆</span></div>
+      <div class="ticker-item">Stored value facilities <span class="diamond">◆</span></div>
+    </div>
+    <div class="ticker-fade-l"></div>
+    <div class="ticker-fade-r"></div>
+  </div>
+
+  <!-- Capabilities Section (Interactive Tabs) -->
   <section id="capabilities" class="section-light">
-    <div class="container">
+    <div class="container reveal">
       <div class="sec-tag">01 / Capabilities</div>
       <h2 class="sec-heading">The 3-Step Deterministic Workflow</h2>
-      <p class="sec-desc">Three moves, zero configuration project in front of them.</p>
+      <p class="sec-desc">Three moves, zero configuration project in front of them. Click any step to inspect the underlying mechanics.</p>
 
       <div class="cards-grid-3">
-        <div class="wf-card">
+        <div class="wf-card active" onclick="selectStep(0)">
           <div class="wf-card-header">
             <span class="num">01</span>
             <span class="step-title">Ingest</span>
           </div>
           <div class="title">Statutory directives &amp; counsel memos</div>
           <p class="body">
-            Drop MAS Notice 626 or FinCEN 31 CFR 1010.410 in one pane and your privileged counsel memo in the other. No templates, no taxonomy project first.
+            Drop MAS Notice 626 or FinCEN 31 CFR in one pane and your privileged counsel memo in the other.
           </p>
           <div class="tag-list">
             <span class="tag">MAS Notice 626</span>
@@ -871,14 +1051,14 @@
           </div>
         </div>
 
-        <div class="wf-card">
+        <div class="wf-card" onclick="selectStep(1)">
           <div class="wf-card-header">
             <span class="num">02</span>
             <span class="step-title">Extract</span>
           </div>
           <div class="title">Semantic criteria extraction</div>
           <p class="body">
-            The engine pulls the criteria that make a process in-scope (cross-border, stored value) and control triggers (velocity checks, PEP thresholds).
+            The engine pulls the criteria that make a process in-scope and the criteria that describe mitigating controls.
           </p>
           <div class="tag-list">
             <span class="tag ai">Process Triggers</span>
@@ -887,14 +1067,14 @@
           </div>
         </div>
 
-        <div class="wf-card">
+        <div class="wf-card" onclick="selectStep(2)">
           <div class="wf-card-header">
             <span class="num">03</span>
             <span class="step-title">Report</span>
           </div>
           <div class="title">Audit gap report</div>
           <p class="body">
-            Percentage likelihood that the directive bites, coverage ratio across exposed rails, and direct flags on unmitigated vulnerabilities.
+            Instant % likelihood scoring, coverage ratio across exposed rails, and direct flags on unmitigated vulnerabilities.
           </p>
           <div class="tag-list">
             <span class="tag success">92% Coverage</span>
@@ -902,6 +1082,14 @@
             <span class="tag">Audit Ready</span>
           </div>
         </div>
+      </div>
+
+      <!-- Interactive detail banner updated via JS -->
+      <div class="step-detail-banner" id="step-detail-banner">
+        <div class="step-detail-tag" id="step-detail-tag">Step 01 · Ingestion Engine</div>
+        <p class="step-detail-text" id="step-detail-text">
+          Drop MAS Notice 626 or FinCEN 31 CFR 1010.410 in one pane and your privileged counsel memo in the other. The directive supplies the regulatory obligation; the memo supplies your institution's own reading of it. No templates, no taxonomy project first.
+        </p>
       </div>
 
       <div class="feature-grid">
@@ -931,7 +1119,7 @@
 
   <!-- The 16-Week Wedge -->
   <section id="wedge" class="section-gray">
-    <div class="container">
+    <div class="container reveal">
       <div class="sec-tag">02 / The 16-Week Wedge</div>
       <h2 class="sec-heading">One domain, four payment rails, one working wedge.</h2>
       <p class="sec-desc">
@@ -939,21 +1127,21 @@
       </p>
 
       <div class="cards-grid-3">
-        <div class="wf-card">
+        <div class="wf-card" style="cursor: default;">
           <div class="wf-card-header">
             <span class="num">Weeks 1–4</span>
           </div>
           <div class="title">Ingest and map</div>
           <p class="body">Statutory directives, counsel memos and the institution's process taxonomy loaded into the platform.</p>
         </div>
-        <div class="wf-card">
+        <div class="wf-card" style="cursor: default;">
           <div class="wf-card-header">
             <span class="num">Weeks 5–10</span>
           </div>
           <div class="title">Evaluate and flag</div>
           <p class="body">Semantic evaluation run across the payment rails in scope, with unmitigated controls surfaced as gaps.</p>
         </div>
-        <div class="wf-card">
+        <div class="wf-card" style="cursor: default;">
           <div class="wf-card-header">
             <span class="num">Weeks 11–16</span>
           </div>
@@ -973,7 +1161,7 @@
 
   <!-- 22-Module Architecture Map -->
   <section id="architecture" class="section-light">
-    <div class="container">
+    <div class="container reveal">
       <div class="sec-tag">03 / Architecture Map</div>
       <h2 class="sec-heading">22 modules. One obligation engine at the centre.</h2>
       <p class="sec-desc">
@@ -1054,7 +1242,7 @@
 
   <!-- Consultancies -->
   <section id="consultancies" class="section-gray">
-    <div class="container consult-grid">
+    <div class="container consult-grid reveal">
       <div>
         <div class="sec-tag">04 / For Consultancies</div>
         <h2 class="sec-heading">Empowering Boutique GRC Consultancies &amp; 2nd-Line Risk Teams.</h2>
@@ -1101,7 +1289,7 @@
 
   <!-- Security & Topology -->
   <section class="section-light">
-    <div class="container">
+    <div class="container reveal">
       <div class="sec-tag">05 / The Banking Advantage</div>
       <h2 class="sec-heading">Technical &amp; security highlights.</h2>
 
@@ -1124,7 +1312,7 @@
 
   <!-- Closing Call to Action -->
   <section class="closing">
-    <div class="container">
+    <div class="container reveal">
       <h2>Run your first obligation review in the next ten minutes.</h2>
       <p>
         The sample MAS Notice 626 directive and counsel memo are already loaded. Press evaluate and read the gap report.
@@ -1151,5 +1339,114 @@
     </div>
   </footer>
 
+  <!-- Interactive JavaScript: Scroll animations, active step switching, counters, progress bar fill -->
+  <script>
+    // 1. Sticky header shadow on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('main-header');
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // 2. Scroll Reveal Observer for sections
+    const revealObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // 3. Executive Card Animated Progress Bar Fill
+    const execCard = document.getElementById('exec-synthesis-card');
+    const progressBar = document.getElementById('coverage-progress-bar');
+    if (execCard && progressBar) {
+      const cardObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            progressBar.style.width = '92%';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      cardObserver.observe(execCard);
+    }
+
+    // 4. Metric Number Counter Animation
+    const metricsStrip = document.getElementById('metrics-strip');
+    let countersAnimated = false;
+    if (metricsStrip) {
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !countersAnimated) {
+            countersAnimated = true;
+            document.querySelectorAll('.counter').forEach(counter => {
+              const target = parseFloat(counter.getAttribute('data-target'));
+              const decimals = parseInt(counter.getAttribute('data-decimals') || '0');
+              const suffix = counter.getAttribute('data-suffix') || '';
+              const duration = 1200;
+              const start = performance.now();
+
+              function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                // easeOutCubic
+                const ease = 1 - Math.pow(1 - progress, 3);
+                const current = target * ease;
+                counter.textContent = current.toFixed(decimals) + suffix;
+
+                if (progress < 1) {
+                  requestAnimationFrame(update);
+                } else {
+                  counter.textContent = target.toFixed(decimals) + suffix;
+                }
+              }
+              requestAnimationFrame(update);
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+      counterObserver.observe(metricsStrip);
+    }
+
+    // 5. Interactive Step Switcher for Section 01
+    const stepsData = [
+      {
+        tag: 'Step 01 · Ingestion Engine',
+        text: 'Drop MAS Notice 626 or FinCEN 31 CFR 1010.410 in one pane and your privileged counsel memo in the other. The directive supplies the regulatory obligation; the memo supplies your institution\'s own reading of it. No templates, no taxonomy project first.'
+      },
+      {
+        tag: 'Step 02 · Semantic Criteria Extraction',
+        text: 'The engine deterministically pulls the criteria that make a process in-scope (cross-border wire transfers, foreign currency settlement, stored value thresholds) alongside required mitigating controls (velocity checks, sanctions screening, PEP verifications). Every matched parameter is highlighted with exact statutory citations.'
+      },
+      {
+        tag: 'Step 03 · Audit Gap & Likelihood Scoring',
+        text: 'Instantly computes percentage likelihood of statutory exposure across every payment rail in scope. Mitigated controls are paired with process nodes, while unmitigated paths (e.g. PayPal merchant wallet payouts lacking automated PEP screening) are flagged with immediate red alerts for compliance remediation.'
+      }
+    ];
+
+    function selectStep(index) {
+      const cards = document.querySelectorAll('.cards-grid-3 .wf-card');
+      cards.forEach((card, i) => {
+        if (i === index) {
+          card.classList.add('active');
+        } else {
+          card.classList.remove('active');
+        }
+      });
+      const tagEl = document.getElementById('step-detail-tag');
+      const textEl = document.getElementById('step-detail-text');
+      if (tagEl && textEl && stepsData[index]) {
+        tagEl.textContent = stepsData[index].tag;
+        textEl.textContent = stepsData[index].text;
+      }
+    }
+  </script>
 </body>
 </html>
