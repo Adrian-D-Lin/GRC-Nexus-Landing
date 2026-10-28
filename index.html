@@ -7,24 +7,24 @@
   <meta name="description" content="Deterministic, on-premise AI compliance architecture that ingests statutory AML directives and maps them to your processes, controls and audit gaps in minutes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #F8FAFC;
-      --card: #FFFFFF;
-      --border: #E2E8F0;
-      --border-subtle: #F1F5F9;
-      --navy: #0F172A;
-      --navy-hover: #1E293B;
-      --slate-body: #475569;
-      --slate-muted: #64748B;
-      --blue-ai: #0284C7;
-      --blue-ai-bg: #F0F9FF;
-      --blue-ai-border: #BAE6FD;
-      --emerald: #10B981;
-      --emerald-bg: #ECFDF5;
-      --emerald-border: #A7F3D0;
-      --emerald-text: #065F46;
+      --bg: #080E1A;
+      --card: #0F1A2E;
+      --border: rgba(147, 197, 253, 0.16);
+      --border-subtle: rgba(147, 197, 253, 0.10);
+      --navy: #F8FAFC;
+      --navy-hover: #C7D2E3;
+      --slate-body: #C7D2E3;
+      --slate-muted: #93A4BF;
+      --blue-ai: #93C5FD;
+      --blue-ai-bg: rgba(37, 99, 235, 0.18);
+      --blue-ai-border: rgba(147, 197, 253, 0.34);
+      --emerald: #16A34A;
+      --emerald-bg: rgba(22, 163, 74, 0.18);
+      --emerald-border: rgba(22, 163, 74, 0.45);
+      --emerald-text: #BBF7D0;
       --amber: #D97706;
       --amber-bg: #FFFBEB;
       --amber-border: #FDE68A;
@@ -52,7 +52,7 @@
     }
 
     .mono {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'Geist Mono', monospace;
     }
 
     .container {
@@ -1225,6 +1225,177 @@
       .survey-pills { grid-template-columns: 1fr; }
       nav { display: none; }
     }
+
+    /* GRC Nexus implementation visual system — D02 Deep Navy & Cobalt. */
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(900px 440px at 85% -10%, rgba(37, 99, 235, 0.18), transparent 62%),
+        linear-gradient(to right, rgba(147, 197, 253, 0.055) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(147, 197, 253, 0.055) 1px, transparent 1px);
+      color: var(--navy);
+    }
+    header {
+      background: rgba(8, 14, 26, 0.88);
+      border-bottom-color: var(--border);
+    }
+    header.scrolled { box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28); }
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--navy);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 auto;
+    }
+    nav a { color: var(--slate-body); }
+    nav a:hover { color: var(--blue-ai); }
+    .btn-navy-sm,
+    .btn-primary,
+    .btn-survey-next,
+    .btn-partner {
+      background: #2563EB;
+      color: #FFFFFF;
+      border: 1px solid #2563EB;
+      box-shadow: 0 8px 22px rgba(37, 99, 235, 0.22);
+    }
+    .btn-navy-sm:hover,
+    .btn-primary:hover,
+    .btn-survey-next:hover,
+    .btn-partner:hover {
+      background: #3B82F6;
+      border-color: #3B82F6;
+    }
+    .btn-secondary,
+    .btn-survey-back {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--blue-ai-border);
+    }
+    .btn-secondary:hover,
+    .btn-survey-back:hover {
+      background: rgba(37, 99, 235, 0.18);
+      border-color: var(--blue-ai);
+    }
+    .hero,
+    .section-light,
+    .section-gray,
+    .section-survey,
+    .closing { background: transparent; border-color: var(--border); }
+    .exec-card,
+    .survey-container-box,
+    .survey-live-card,
+    .wf-card,
+    .feat-card,
+    .arch-col,
+    .partner-card,
+    .sec-card,
+    .result-card-inner {
+      background: var(--card);
+      border-color: var(--border);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.20);
+    }
+    .exec-card:hover,
+    .wf-card:hover,
+    .feat-card:hover,
+    .arch-col:hover,
+    .partner-card:hover,
+    .sec-card:hover {
+      border-color: var(--blue-ai-border);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    }
+    .exec-tab-bar,
+    .ticker-wrap,
+    .exec-footer,
+    .wf-card-header,
+    .arch-header,
+    .survey-step-indicator,
+    .risk-meter {
+      background: rgba(15, 26, 46, 0.78);
+      border-color: var(--border);
+    }
+    .exec-tab-btn { color: var(--slate-muted); }
+    .exec-tab-btn:hover { color: var(--navy); background: rgba(37, 99, 235, 0.10); }
+    .exec-tab-btn.active { background: var(--card); color: var(--navy); border-bottom-color: #2563EB; }
+    .survey-pill,
+    .survey-field input,
+    .survey-field select,
+    .tag,
+    .arch-item,
+    .exec-row {
+      background: rgba(15, 26, 46, 0.70);
+      border-color: var(--border);
+      color: var(--slate-body);
+    }
+    .survey-pill:hover { border-color: var(--blue-ai); background: rgba(37, 99, 235, 0.12); }
+    .survey-pill.selected { background: rgba(37, 99, 235, 0.18); border-color: #2563EB; color: var(--navy); }
+    .survey-pill.selected .check-icon { background: #2563EB; border-color: #2563EB; }
+    .survey-field input:focus,
+    .survey-field select:focus { border-color: #93C5FD; box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.22); }
+    .exec-header,
+    .exec-row,
+    .arch-item.active-wedge,
+    .coverage-card { border-color: var(--border); }
+    .exec-row.gap-row,
+    .exec-alert,
+    .tag.warning,
+    .result-score-badge,
+    .sec-card.amber {
+      background: rgba(37, 99, 235, 0.12);
+      border-color: var(--blue-ai-border);
+      color: var(--slate-body);
+    }
+    .highlight-green { color: #93C5FD; }
+    .tag.success { color: #86EFAC; }
+    .progress-bar-bg { background: rgba(147, 197, 253, 0.14); }
+    .progress-bar-fill { background: #2563EB; }
+    .sec-card.blue,
+    .tag.ai,
+    .pill-badge { background: rgba(37, 99, 235, 0.18); border-color: var(--blue-ai-border); color: #93C5FD; }
+    .feat-card .tag-lbl.primary,
+    .feat-card .tag-lbl.ai,
+    .wf-card-header .num,
+    .arch-item .code { color: #93C5FD; }
+    .tag.warning { color: #FDE68A; }
+    .feat-card .tag-lbl.warning { color: #93C5FD; }
+    footer { background: #080E1A; border-color: var(--border); }
+    .footer-dot { background: #2563EB; }
+    body,
+    button,
+    input,
+    select,
+    textarea {
+      font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+    .mono,
+    .pill-badge,
+    .metric-item .label,
+    .ticker-item,
+    .exec-tab-btn,
+    .survey-step-indicator,
+    .survey-field label,
+    .tag,
+    .arch-item .code,
+    .wf-card-header .num,
+    [style*="JetBrains Mono"] {
+      font-family: 'Geist Mono', monospace !important;
+    }
+    .risk-meter-fill { background: #D97706; }
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 2px solid #93C5FD;
+      outline-offset: 3px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+    }
   </style>
 </head>
 <body>
@@ -1232,7 +1403,10 @@
   <!-- Sticky Header (Clean wordmark, no emerald pulse) -->
   <header id="main-header">
     <div class="container header-inner">
-      <div class="wordmark">GRC NEXUS</div>
+      <div class="wordmark">
+        <img class="brand-mark" src="public/assets/grc-pinwheel.svg" alt="GRC Nexus">
+        <span>GRC NEXUS</span>
+      </div>
       <nav>
         <a href="#survey-benchmark">Audit Readiness</a>
         <a href="#capabilities">Capabilities</a>
@@ -1275,7 +1449,7 @@
             <div class="label">Rails in scope</div>
           </div>
           <div class="metric-item">
-            <div class="val" style="color: var(--emerald);">0</div>
+            <div class="val" style="color: var(--blue-ai);">0</div>
             <div class="label">Cloud inference calls</div>
           </div>
         </div>
@@ -1414,7 +1588,7 @@
               </div>
               <div class="result-row">
                 <span class="k">Evaluation Speed:</span>
-                <span class="v" style="color:var(--emerald);">0.84s Deterministic</span>
+                <span class="v" style="color:var(--blue-ai);">0.84s Deterministic</span>
               </div>
             </div>
             <div class="result-confirm-banner" id="res-confirm-msg">
@@ -1501,6 +1675,7 @@
       <div class="ticker-item">Cross-border settlement <span class="diamond">◆</span></div>
       <div class="ticker-item">Stored value facilities <span class="diamond">◆</span></div>
     </div>
+  </div>
   <!-- 01 / Dedicated Customer Acquisition & Audit Readiness Diagnostic Benchmark -->
   <section id="survey-benchmark" class="section-survey">
     <div class="container reveal">
@@ -1666,7 +1841,7 @@
             </div>
             <div class="result-row">
               <span class="k">Evaluation Latency:</span>
-              <span class="v" style="color:var(--emerald);">0.84 Seconds (Deterministic)</span>
+              <span class="v" style="color:var(--blue-ai);">0.84 Seconds (Deterministic)</span>
             </div>
           </div>
 
